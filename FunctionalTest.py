@@ -33,7 +33,7 @@ class PageTest(unittest.TestCase):
 		inpName.click()
 		inpName.send_keys('1: Mr Arthur Leni')
 		time.sleep(1)
-		btn_Pindot_button.click()
+		btn_P_button.click()
 		time.sleep(1)
 		 
 		'''S
