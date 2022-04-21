@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from msystem import views
+from kdbes import views
 
 urlpatterns = [
     path('', views.MainPage, name='mainpage'),
