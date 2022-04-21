@@ -8,11 +8,11 @@
 	<body>
 		<form method="POST">
 		{% csrf_token %}
-		<h1>Feedback Form</h1>
+		<h1>Resident Form</h1>
 		<label>Name:</label><input type="text" id="applicantName" size="30" name="attribute" placeholder="Enter your name here.">
-		<input id="btnPindot"type="submit" name="btnPindot" value="Submit"/>
+		<input id="btnP"type="submit" name="btnP" value="Submit"/>
 	</form>
-	<table id="registryTable">
+	<table id="regtable">
 		<tr>
 			<td>1: {{NewName}}</td>
 		</tr>

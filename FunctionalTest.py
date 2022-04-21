@@ -26,12 +26,12 @@ class PageTest(unittest.TestCase):
 		self.browser.get('http://localhost:8000')
 		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
-		self.assertIn('Feedback Form', headerText)
+		self.assertIn('Resident Form', headerText)
 		inpName = self.browser.find_element_by_id('applicantName')
-		btn_Pindot_button = self.browser.find_element_by_id('btnPindot')
+		btn_P_button = self.browser.find_element_by_id('btnP')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your name here.')
 		inpName.click()
-		inpName.send_keys('1: Mr.Jim_Guy')
+		inpName.send_keys('1: Mr Arthur Leni')
 		time.sleep(1)
 		btn_Pindot_button.click()
 		time.sleep(1)
@@ -46,13 +46,13 @@ class PageTest(unittest.TestCase):
 		rows = table.find_element_by_tag_name('tr')
 		self.assertTrue(any(row.text == '1: Mickey Mouse'))
 		'''
-		# table = self.browser.find_element_by_id('registryTable')
+		# table = self.browser.find_element_by_id('regtable')
 		# rows = table.find_elements_by_tag_name('tr')
 		#self.assertTrue(any(rows.text == '1: Mr.Jim_Guy'), "No Table Here!")
-		#self.assertIn('1: Mr.Jim_Guy', [rows.text for rows in rows])
+		#self.assertIn('1: Mr Arthur Leni, [rows.text for rows in rows])
 
 	def checking_if_in_table_list(self,row_test):
-		table = self.browser.find_element_by_id('registryTable')
+		table = self.browser.find_element_by_id('regtable')
 		rows = table.find_elements_by_tag_name('tr')
 		self.assertIn('1: Mr.Jim_Guy', [rows.text for rows in rows])
 
