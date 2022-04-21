@@ -35,6 +35,15 @@ class PageTest(unittest.TestCase):
 		time.sleep(1)
 		btn_P_button.click()
 		time.sleep(1)
+
+		resName = self.browser.find_element_by_id('residentage')
+		btn_P_button = self.browser.find_element_by_id('btnP')
+		self.assertEqual(resName.get_attribute('placeholder'),'Enter your name here.')
+		resName.click()
+		resName.send_keys('69')
+		time.sleep(1)
+		btn_P_button.click()
+		time.sleep(1)
 		 
 		'''S
 		inputbox = self.browser.find_element_by_id('idNewEntry')
@@ -55,6 +64,11 @@ class PageTest(unittest.TestCase):
 		table = self.browser.find_element_by_id('regtable')
 		rows = table.find_elements_by_tag_name('tr')
 		self.assertIn('Mr Arthur Leni', [rows.text for rows in rows])
+
+	def checking_if_in_table_list(self,row_test):
+		table = self.browser.find_element_by_id('regtable')
+		rows = table.find_elements_by_tag_name('tr')
+		self.assertIn('69', [rows.text for rows in rows])
 
 if __name__ == '__main__':
 	unittest.main(warnings='ignore')
