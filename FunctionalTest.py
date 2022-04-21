@@ -24,7 +24,7 @@ class PageTest(unittest.TestCase):
 		
 	def test_start_list_and_retrieve_it(self):
 		self.browser.get('http://localhost:8000')
-		self.assertIn('Chrono Intelligence - World News', self.browser.title)
+		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Feedback Form', headerText)
 		inpName = self.browser.find_element_by_id('applicantName')
