@@ -54,7 +54,7 @@ class PageTest(unittest.TestCase):
 	def checking_if_in_table_list(self,row_test):
 		table = self.browser.find_element_by_id('regtable')
 		rows = table.find_elements_by_tag_name('tr')
-		self.assertIn('1: Mr.Jim_Guy', [rows.text for rows in rows])
+		self.assertIn('1: Mr Arthur Leni', [rows.text for rows in rows])
 
 if __name__ == '__main__':
 	unittest.main(warnings='ignore')
