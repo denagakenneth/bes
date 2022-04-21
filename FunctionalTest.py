@@ -27,7 +27,7 @@ class PageTest(unittest.TestCase):
 		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Resident Form', headerText)
-		inpName = self.browser.find_element_by_id('applicantName')
+		inpName = self.browser.find_element_by_id('residentname')
 		btn_P_button = self.browser.find_element_by_id('btnP')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your name here.')
 		inpName.click()
