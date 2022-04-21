@@ -31,7 +31,7 @@ class PageTest(unittest.TestCase):
 		btn_P_button = self.browser.find_element_by_id('btnP')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your name here.')
 		inpName.click()
-		inpName.send_keys('1: Mr Arthur Leni')
+		inpName.send_keys('Mr Arthur Leni')
 		time.sleep(1)
 		btn_P_button.click()
 		time.sleep(1)
@@ -54,7 +54,7 @@ class PageTest(unittest.TestCase):
 	def checking_if_in_table_list(self,row_test):
 		table = self.browser.find_element_by_id('regtable')
 		rows = table.find_elements_by_tag_name('tr')
-		self.assertIn('1: Mr Arthur Leni', [rows.text for rows in rows])
+		self.assertIn('Mr Arthur Leni', [rows.text for rows in rows])
 
 if __name__ == '__main__':
 	unittest.main(warnings='ignore')
