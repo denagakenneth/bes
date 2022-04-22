@@ -1,25 +1,36 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<meta charset="utf-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1" />
-	<title>Barangay Event Schedule</title>
-</head>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>PT Schedule</title>
+	</head>
 	<body>
 		<form method="POST">
 		{% csrf_token %}
-		<h1>Resident Form</h1>
-		<label>Name:</label><input type="text" id="residentname" size="30" name="attribute" placeholder="Enter your name here.">
-		<input id="btnP"type="submit" name="btnP" value="Submit"/>
-
-		<label>Age:</label><input type="text" id="residentage" size="30" name="attribute" placeholder="Enter your age here.">
-		<input id="btnP"type="submit" name="btnP" value="Submit"/>
-	</form>
-	<table id="regtable">
-		<tr>
-			<td>1: {{NewName}}</td>
-			<td>2: {{NewAge}}</td>
-		</tr>
-	</table>		
+		<h1>Schedule Form</h1>
+		<label>Name:</label><input type="text" id="studentName" size="30" name="studentName" placeholder="Enter your name here.">
+		<label>FName:</label><input type="text" id="FstudentName" size="30" name="FstudentName" placeholder="Enter your name here.">
+		<label>LName:</label><input type="text" id="LstudentName" size="30" name="LstudentName" placeholder="Enter your name here.">
+		<label>LName:</label><input type="text" id="MstudentName" size="30" name="MstudentName" placeholder="Enter your name here.">
+		<input id="btn"type="submit" name="btn" value="Submit"/>
+		</form>
+		<table id="scheduleTable">
+		
+			<!--<tr>
+				<th>Name<th/>
+				<th>Name2<th/>
+				<th>Name3<th/>
+			<tr/>  -->
+			
+			
+			<tr>
+				<td>1. {{NameNew}}<td/>
+				<td>2. {{FNameNew}}<td/>
+				<td>3. {{LNameNew}}<td/>
+				<td>4. {{MNameNew}}<td/>
+			</tr>
+				
+		</table>		
 	</body>	
 </html>
