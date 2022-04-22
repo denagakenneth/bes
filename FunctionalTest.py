@@ -17,7 +17,7 @@ class PageTest(unittest.TestCase):
 		inpNameL = self.browser.find_element_by_id('LresName')
 		inpAddress = self.browser.find_element_by_id('MresAddress')
 		btn_button = self.browser.find_element_by_id('btn')
-		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your name here.')
+		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your Brgy ID here.')
 		inpName.click()
 		inpName.send_keys('Arthur')
 		time.sleep(1)
