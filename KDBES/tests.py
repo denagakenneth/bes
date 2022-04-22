@@ -14,18 +14,18 @@ class HomePageTest(TestCase):
 		self.assertTemplateUsed(resp, 'mainpage.html')
 	
 	def test_responding_post_request(self):
-		resp = self.client.post('/', data={'studentName' :'NameNew'})
+		resp = self.client.post('/', data={'resName' :'NameNew'})
 		self.assertIn('NameNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
 		
-		resp = self.client.post('/', data={'FstudentName' :'FNameNew'})
+		resp = self.client.post('/', data={'FresName' :'FNameNew'})
 		self.assertIn('FNameNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
 		
-		resp = self.client.post('/', data={'LstudentName' :'LNameNew'})
+		resp = self.client.post('/', data={'LresName' :'LNameNew'})
 		self.assertIn('LNameNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
 		
-		resp = self.client.post('/', data={'MstudentName' :'MNameNew'})
+		resp = self.client.post('/', data={'MresName' :'MNameNew'})
 		self.assertIn('MNameNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
