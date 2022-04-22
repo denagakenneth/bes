@@ -16,7 +16,7 @@ class HomePageTest(TestCase):
 		response = MainPage(request)
 		html = response.content.decode('utf8')
 		self.assertTrue(html.startswith('<html>'))
-		self.assertIn('<title>Philikula</title>', html)
+		self.assertIn('<title>BES/title>', html)
 		self.assertTrue(html.endswith(''))
 
 		stringPage = render_to_string('mainpage.html')

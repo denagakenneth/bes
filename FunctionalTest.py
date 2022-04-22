@@ -27,6 +27,7 @@ class PageTest(unittest.TestCase):
 		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Resident Form', headerText)
+		
 		resName = self.browser.find_element_by_id('residentname')
 		btn_P_button = self.browser.find_element_by_id('btnP')
 		self.assertEqual(resName.get_attribute('placeholder'),'Enter your name here.')
@@ -50,7 +51,7 @@ class PageTest(unittest.TestCase):
 		'''
 		# table = self.browser.find_element_by_id('regtable')
 		# rows = table.find_elements_by_tag_name('tr')
-		#self.assertTrue(any(rows.text == '1: Mr.Jim_Guy'), "No Table Here!")
+		#self.assertTrue(any(rows.text == '1: Mr Arthur Leni'), "No Table Here!")
 		#self.assertIn('1: Mr Arthur Leni, [rows.text for rows in rows])
 
 	def checking_if_in_table_list(self,row_test):
