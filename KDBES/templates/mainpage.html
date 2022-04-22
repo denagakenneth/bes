@@ -3,19 +3,19 @@
 	<head>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<title>PT Schedule</title>
+		<title>Barangay Event Schedule</title>
 	</head>
 	<body>
 		<form method="POST">
 		{% csrf_token %}
-		<h1>Schedule Form</h1>
-		<label>Name:</label><input type="text" id="studentName" size="30" name="studentName" placeholder="Enter your name here.">
-		<label>FName:</label><input type="text" id="FstudentName" size="30" name="FstudentName" placeholder="Enter your name here.">
-		<label>LName:</label><input type="text" id="LstudentName" size="30" name="LstudentName" placeholder="Enter your name here.">
-		<label>LName:</label><input type="text" id="MstudentName" size="30" name="MstudentName" placeholder="Enter your name here.">
+		<h1>Resident Form</h1>
+		<label>Name:</label><input type="text" id="resName" size="30" name="resName" placeholder="Enter your name here.">
+		<label>FName:</label><input type="text" id="FresName" size="30" name="FresName" placeholder="Enter your Fname here.">
+		<label>LName:</label><input type="text" id="LresName" size="30" name="LresName" placeholder="Enter your Lname here.">
+		<label>MName:</label><input type="text" id="MresName" size="30" name="MresName" placeholder="Enter your Mname here.">
 		<input id="btn"type="submit" name="btn" value="Submit"/>
 		</form>
-		<table id="scheduleTable">
+		<table id="resTable">
 		
 			<!--<tr>
 				<th>Name<th/>
