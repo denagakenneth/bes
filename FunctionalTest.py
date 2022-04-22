@@ -37,6 +37,15 @@ class PageTest(unittest.TestCase):
 		btn_P_button.click()
 		time.sleep(1)
 
+		resAge = self.browser.find_element_by_id('residentage')
+		btn_P_button = self.browser.find_element_by_id('btnP')
+		self.assertEqual(resAge.get_attribute('placeholder'),'Enter your age here.')
+		resAge.click()
+		resAge.send_keys('Mr Arthur Leni')
+		time.sleep(1)
+		btn_P_button.click()
+		time.sleep(1)
+
 		
 		 
 		'''S
