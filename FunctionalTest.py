@@ -15,7 +15,7 @@ class PageTest(unittest.TestCase):
 		inpName = self.browser.find_element_by_id('brgyid')
 		inpNameF = self.browser.find_element_by_id('FresName')
 		inpNameL = self.browser.find_element_by_id('LresName')
-		inpAddress = self.browser.find_element_by_id('MresAddress')
+		inpAddress = self.browser.find_element_by_id('resAddress')
 		btn_button = self.browser.find_element_by_id('btn')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your Brgy ID here.')
 		inpName.click()
