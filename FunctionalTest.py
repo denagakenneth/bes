@@ -12,7 +12,7 @@ class PageTest(unittest.TestCase):
 		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Resident Form', headerText)
-		inpName = self.browser.find_element_by_id('resName')
+		inpName = self.browser.find_element_by_id('brgyid')
 		inpNameF = self.browser.find_element_by_id('FresName')
 		inpNameL = self.browser.find_element_by_id('LresName')
 		inpAddress = self.browser.find_element_by_id('MresAddress')

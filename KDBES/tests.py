@@ -14,8 +14,8 @@ class HomePageTest(TestCase):
 		self.assertTemplateUsed(resp, 'mainpage.html')
 	
 	def test_responding_post_request(self):
-		resp = self.client.post('/', data={'resName' :'NameNew'})
-		self.assertIn('NameNew', resp.content.decode())
+		resp = self.client.post('/', data={'brgyid' :'NameNew'})
+		self.assertIn('idNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
 		
 		resp = self.client.post('/', data={'FresName' :'FNameNew'})
