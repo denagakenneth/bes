@@ -1,6 +1,6 @@
 from django.db import models
 
-class Resident(models.Model):
+'''class Resident(models.Model):
 	brgyid = models.TextField(default='')
 	FresName = models.TextField(default='')
 	MresName = models.TextField(default='')
@@ -9,7 +9,7 @@ class Resident(models.Model):
 	resAge= models.TextField(default='')
 	resBday = models.TextField(default='')
 	resContact = models.TextField(default='')
-	registration = models.ForeignKey(Registration, default=None, on_delete=models.CASCADE)
+	registration = models.ForeignKey(Registration, default=None, on_delete=models.CASCADE)'''
 
 '''class Registration(models.Model):
 	brgyID = models.TextField(default='')
