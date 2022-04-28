@@ -1,3 +1,4 @@
+from django.test import LiveServerTestCase
 from selenium import webdriver
 import unittest
 from selenium.webdriver.common.keys import Keys
@@ -47,5 +48,5 @@ class PageTest(unittest.TestCase):
 		rows = table.find_elements_by_tag_name('tr')
 		self.assertIn('1: Arthur', [rows.text for rows in rows])
 
-if __name__ == '__main__':
-	unittest.main(warnings='ignore')
+'''if __name__ == '__main__':
+	unittest.main(warnings='ignore')'''
