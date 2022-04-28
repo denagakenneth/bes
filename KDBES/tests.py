@@ -38,6 +38,10 @@ class HomePageTest(TestCase):
 		self.assertIn('AgeNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
 
+		resp = self.client.post('/', data={'resBday' :'BdayNew'})
+		self.assertIn('BdayNew', resp.content.decode())
+		self.assertTemplateUsed(resp, 'mainpage.html')
+
 		resp = self.client.post('/', data={'resContact' :'ContactNew'})
 		self.assertIn('ContactNew', resp.content.decode())
 		self.assertTemplateUsed(resp, 'mainpage.html')
