@@ -40,7 +40,7 @@ class PageTest(unittest.TestCase):
 		time.sleep(1)
 		inpContact.send_keys('0969143143')
 		time.sleep(1)
-		btn_button.click()
+		boxContinue_button.click()
 		time.sleep(1)
 
 	def checking_if_in_table_list(self,row_test):
