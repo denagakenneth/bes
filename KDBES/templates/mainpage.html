@@ -380,6 +380,13 @@ body {
     font-size: large;
 }
 
+.table,
+    th,
+    td {
+        border: 1px solid black;
+        border-collapse: collapse;
+    }
+
 </style>
 </head>
 <body>
@@ -463,17 +470,28 @@ body {
     
     <br>
     <br>
-    <table id="resTable">
+    <table id="resTable", style="width:100%">
 
       <tr>
-        <td>1. {{idNew}}<td/>
-        <td>2. {{FNameNew}}<td/>
-        <td>2. {{MNameNew}}<td/>
-        <td>3. {{LNameNew}}<td/>
-        <td>4. {{AddressNew}}<td/>
-        <td>5. {{AgeNew}}<td/>
-        <td>6. {{BdayNew}}<td/>
-        <td>7. {{ContactNew}}<td/>
+            <th>Brgy ID</th>
+            <th>Firstname</th>
+            <th>Middlename</th>
+            <th>Lastname</th>
+            <th>Age</th>
+            <th>Address</th>
+            <th>Bday</th>
+            <th>Contact #</th>
+        </tr>
+
+      <tr>
+        <td>1. {{idNew}}</td>
+        <td>2. {{FNameNew}}</td>
+        <td>2. {{MNameNew}}</td>
+        <td>3. {{LNameNew}}</td>
+        <td>4. {{AddressNew}}</td>
+        <td>5. {{AgeNew}}</td>
+        <td>6. {{BdayNew}}</td>
+        <td>7. {{ContactNew}}</td>
       </tr>
         
     </table>
