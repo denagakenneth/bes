@@ -13,7 +13,7 @@ class PageTest(unittest.TestCase):
 		self.assertIn('Barangay Event Schedule', self.browser.title)
 		headerText = self.browser.find_element_by_tag_name('h1').text
 		self.assertIn('Resident Form', headerText)
-		inpName = self.browser.find_element_by_id('brgyid')
+		inpBgryID = self.browser.find_element_by_id('brgyid')
 		inpNameF = self.browser.find_element_by_id('FresName')
 		inpNameM = self.browser.find_element_by_id('MresName')
 		inpNameL = self.browser.find_element_by_id('LresName')
@@ -23,7 +23,7 @@ class PageTest(unittest.TestCase):
 		inpContact = self.browser.find_element_by_id('resContact')
 		boxContinue_button = self.browser.find_element_by_id('boxContinue')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your Brgy ID here.')
-		inpName.click()
+		inpBgryID.click()
 		inpName.send_keys('143')
 		time.sleep(1)
 		inpNameF.send_keys('Arthuro')
