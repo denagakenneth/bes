@@ -31,7 +31,7 @@ DAY_CHOICES =(
 
 # Model 1
 class Resident_info(models.Model):
-	Brgy_id = models.CharField(max_length=10)
+	Brgy_id = models.CharField(max_length=4)
     FresName = models.CharField(max_length=30)
     MresName = models.CharField(max_length=30)
     LresName = models.CharField(max_length=30)
