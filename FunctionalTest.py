@@ -21,7 +21,7 @@ class PageTest(unittest.TestCase):
 		inpAge = self.browser.find_element_by_id('resAge')
 		inpBday = self.browser.find_element_by_id('resBday')
 		inpContact = self.browser.find_element_by_id('resContact')
-		btn_button = self.browser.find_element_by_id('btn')
+		boxContinue_button = self.browser.find_element_by_id('boxContinue')
 		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your Brgy ID here.')
 		inpName.click()
 		inpName.send_keys('143')
