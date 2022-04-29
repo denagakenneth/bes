@@ -22,9 +22,9 @@ class PageTest(unittest.TestCase):
 		inpBday = self.browser.find_element_by_id('resBday')
 		inpContact = self.browser.find_element_by_id('resContact')
 		boxContinue_button = self.browser.find_element_by_id('boxContinue')
-		self.assertEqual(inpName.get_attribute('placeholder'),'Enter your Brgy ID here.')
+		self.assertEqual(inpBgryID.get_attribute('placeholder'),'Enter your Brgy ID here.')
 		inpBgryID.click()
-		inpName.send_keys('143')
+		inpBgryID.send_keys('143')
 		time.sleep(1)
 		inpNameF.send_keys('Arthuro')
 		time.sleep(1)
@@ -46,7 +46,7 @@ class PageTest(unittest.TestCase):
 	def checking_if_in_table_list(self,row_test):
 		table = self.browser.find_element_by_id('resTable')
 		rows = table.find_elements_by_tag_name('tr')
-		self.assertIn('1: Arthur', [rows.text for rows in rows])
+		self.assertIn('1: 143', [rows.text for rows in rows])
 
 if __name__ == '__main__':
 	unittest.main(warnings='ignore')
