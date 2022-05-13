@@ -1,23 +1,7 @@
 from django.db import models
 
-'''class Resident(models.Model):
-	brgyid = models.TextField(default='')
-	FresName = models.TextField(default='')
-	MresName = models.TextField(default='')
-	LresName = models.TextField(default='')
-	resAddress = models.TextField(default='')
-	resAge= models.TextField(default='')
-	resBday = models.TextField(default='')
-	resContact = models.TextField(default='')
-	registration = models.ForeignKey(Registration, default=None, on_delete=models.CASCADE)'''
+#BARANGAY EVENT SCHEDULE
 
-'''class Registration(models.Model):
-	brgyID = models.TextField(default='')
-	brgy = models.TextField(default='')
-	brgyadd = models.TextField(default='')'''
-
-
-# BARANGAY EVENT SCHEDULE
 
 '''COURT_CHOICES =(
     ("M" , "Main Phase 2"),
@@ -72,6 +56,18 @@ class Reservation(models.Model):
 
 
 # Model 4
+
+class Rent(models.Model):
+    resident_resrep = models.ForeignKey(Resident_info, default=None, on_delete=models.CASCADE)
+    chairs = models.CharField(max_length=30)
+    tables = models.CharField(max_length=30)
+
+
+    def __str__(self):
+        return str(self.equipment)
+
+
+#Model 5
 class Barangay_report(models.Model):
     Resident_brgyrep = models.ForeignKey(Resident_info, default=None, on_delete=models.CASCADE)
     Brgyreport = models.TextField(default='')
@@ -81,8 +77,8 @@ class Barangay_report(models.Model):
     def __str__(self):
         return str(self.Brgyreport_date)
 
-#Model 5
 
+#reserved Model 
 class Resident_report(models.Model):
     resident_resrep = models.ForeignKey(Resident_info, default=None, on_delete=models.CASCADE)
     Residentreport = models.TextField(default='')
