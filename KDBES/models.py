@@ -45,11 +45,14 @@ class Resident_info(models.Model):
         return self.Name
 
 # Model 2
-class Event_info(models.Model):
+class Schedule(models.Model):
     resident_info = models.ForeignKey(Resident_info, default=None, on_delete=models.CASCADE)
     Day = models.TextField(default='')
-    Time = models.TextField(default='')
+    Time start= models.TextField(default='')
+    Time end= models.TextField(default='')
     Hours = models.TextField(default='')
+    Date = models.DateTimeField(default='')
+    Participants number = models.TextField(default='')
     
 
     def __str__(self):
@@ -60,7 +63,7 @@ class Reservation(models.Model):
 	Event = models.ForeignKey(Resident_info, default=None, on_delete=models.CASCADE)
 	Court = models.CharField(max_length=1, choices = COURT_CHOICES, default ="")
 	Day = models.CharField(max_length = 2, choices = DAY_CHOICES, default ="")
-	Date = models.DateTimeField(default='')
+	
 	
 
 	def __str__(self):
