@@ -1,78 +1,117 @@
-#from django.urls import resolve
+from django.urls import resolve
 from django.test import TestCase
-from KDBES.views import MainPage
-#from django.http import HttpRequest
-#from django.template.loader import render_to_string
-#from django.urls import resolve
-#from django.urls import render
-#from django.urls import response
+from KDBES.views import home_page
 
-class HomePageTest(TestCase):
+from KDBES.models import Bevent, Rinfo
 
-	def test_mainpage_as_seen_client(self):
-		resp = self.client.get('/')
-		self.assertTemplateUsed(resp, 'mainpage.html')
-	
-	def test_responding_post_request(self):
-		resp = self.client.post('/', data={'brgyid' :'idNew'})
-		self.assertIn('idNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-		
-		resp = self.client.post('/', data={'FresName' :'FNameNew'})
-		self.assertIn('FNameNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
+from django.http import HttpRequest
+from django.template.loader import render_to_string
 
-		resp = self.client.post('/', data={'MresName' :'MNameNew'})
-		self.assertIn('MNameNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-		
-		resp = self.client.post('/', data={'LresName' :'LNameNew'})
-		self.assertIn('LNameNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-		
-		resp = self.client.post('/', data={'resAddress' :'AddressNew'})
-		self.assertIn('AddressNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
 
-		resp = self.client.post('/', data={'resAge' :'AgeNew'})
-		self.assertIn('AgeNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-
-		resp = self.client.post('/', data={'resBday' :'BdayNew'})
-		self.assertIn('BdayNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-
-		resp = self.client.post('/', data={'resContact' :'ContactNew'})
-		self.assertIn('ContactNew', resp.content.decode())
-		self.assertTemplateUsed(resp, 'mainpage.html')
-
-'''class ORM(TestCase):
-
-   def test_saving_and_retrieving_items(self):
-      list_ = List()        
-      list_.save()
+class MyMainPage(TestCase):
+    
+   def test_my_mainpage_view(self):
+       found = resolve('/')
+       self.assertEqual(found.func, home_page)
       
-      first_item = Item()        
-      first_item.donatorsname = 'The first (ever) list item' 
-      first_item.list = list_ 
-      first_item.save()        
-               
-      second_item = Item()      
-      second_item.am = 'Item the second'
-      second_item.list = list_         
-      second_item.save()
-       
-       
-      saved_list = List.objects.first()          
-      self.assertEqual(saved_list, list_)
-                 
-      saved_items = Item.objects.all()
-      self.assertEqual(saved_items.count(), 2)
-       
-      first_saved_item = saved_items[0]
-      second_saved_item = saved_items[1]      	     
-      self.assertEqual(first_saved_item.fullname, 'The first (ever) list item')
-      self.assertEqual(first_saved_item.list, list_)
-      self.assertEqual(second_saved_item.ni, 'Item the second')
-      self.assertEqual(second_saved_item.list, list_)'''
+   def test_correct_view(self):
+       request = HttpRequest()
+       response = home_page(request)
+       expected_html = render_to_string('a.html')
 
+   
+   def test_saves_necessary(self): 
+       self.client.get('/')        
+       self.assertEqual(Bevent.objects.count(), 0)
+      
+class ListViewTest(TestCase):
+ 
+   def test_uses_SInfotemplate(self):
+       rinfo_ = Rinfo.objects.create()        
+       response = self.client.get(f'/{rinfo_.id}/')
+       self.assertTemplateUsed(response, 'b.html')
+      
+   def test_display_list_item(self):
+       correct_rinfo = Rinfo.objects.create()
+       Bevent.objects.create(blocation='Area 1', rinfo=correct_rinfo)
+       Bevent.objects.create(bcategory='Wedding', rinfo=correct_rinfo)
+       other_rinfo = Rinfo.objects.create()
+       Bevent.objects.create(blocation='Other Location', rinfo=other_rinfo)
+       Bevent.objects.create(bcategory='Other Event', rinfo=other_rinfo)        
+      
+       response = self.client.get(f'/{correct_rinfo.id}/')
+     
+       self.assertNotContains(response, 'Other Location')
+       self.assertNotContains(response, 'Other Event')
+   
+   def test_displays_all(self):        
+       rinfo_ = Rinfo.objects.create()        
+       Bevent.objects.create(blocation='Area 1', rinfo=rinfo_)        
+       Bevent.objects.create(bcategory='Wedding', rinfo=rinfo_)
+   
+   def test_passes_correct_template(self):       
+       other_rinfo = Rinfo.objects.create()        
+       correct_rinfo = Rinfo.objects.create()        
+       response = self.client.get(f'/{correct_rinfo.id}/')
+       self.assertEqual(response.context['rinfo'], correct_rinfo)  
+
+
+
+ 
+
+class InfoTest(TestCase):
+
+
+  def test_info(self):       
+      other_rinfo = Rinfo.objects.create()        
+      correct_rinfo = Rinfo.objects.create()        
+      
+      self.client.post(            
+          f'/{correct_rinfo.id}/add_info',            
+          data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date'})            
+      
+      self.assertEqual(Bevent.objects.count(), 1)        
+      new_info= Bevent.objects.first()        
+      self.assertEqual(new_info.bdate, 'New Date')       
+      self.assertEqual(new_info.rinfo, correct_rinfo)
+      
+  def test_redirects_info(self):        
+      other_rinfo = Rinfo.objects.create()        
+      correct_rinfo = Rinfo.objects.create()        
+      response = self.client.post(            
+          f'/{correct_rinfo.id}/add_info',            
+         data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date'})       
+            
+      self.assertRedirects(response, f'/{correct_rinfo.id}/')
+      
+class MyORMandKDBES(TestCase):
+
+   def test_save_retrieve_info(self):
+      rinfo_ = Rinfo()        
+      rinfo_.save()
+      
+      first_info = Bevent()        
+      first_info.blocation = 'Area 1' 
+      first_info.rinfo =rinfo_ 
+      first_info.save()        
+               
+      second_info = Bevent()      
+      second_info.blocation = 'Kadiwa'
+      second_info.rinfo = rinfo_         
+      second_info.save()
+       
+       
+      saved_rinfo = Rinfo.objects.first()          
+      self.assertEqual(saved_rinfo, rinfo_)
+                 
+      saved_infos = Bevent.objects.all()
+      self.assertEqual(saved_infos.count(), 2)
+       
+      first_saved_info = saved_infos[0]
+      second_saved_info = saved_infos[1]             
+      self.assertEqual(first_saved_info.blocation, 'Area 1')
+      self.assertEqual(first_saved_info.rinfo, rinfo_)
+      self.assertEqual(second_saved_info.blocation, 'Kadiwa')
+      self.assertEqual(second_saved_info.rinfo, rinfo_)
+
+  

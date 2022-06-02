@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BARANGAY EVENT SCHEDULE</title>
+
+
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
+
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: #56585b;
+}
+
+::-moz-placeholder {
+  color: #56585b;
+}
+
+:-moz-placeholder {
+  color: #56585b;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #0a0a0b;
+}
+
+ul, nav{
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+  margin:2rem;
+  font-family: Lucida Handwriting, serif;
+}
+i {
+  font-size: 1rem;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 5px 50px 0;
+  font-family: Lucida Handwriting, serif;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li{
+  margin: 0 15px;
+}
+
+header nav li:first-child{
+  margin-left: 0;
+}
+
+header nav li:last-child{
+  margin-right: 0;
+}
+
+a.btn {
+  color: #fff;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a.btn:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+  color: #fff;
+}
+
+.cover  {
+  height: 100vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  padding: 20px 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.flex-form input[type="submit"] {
+  background: #ef3f5a;
+  border: 1px solid #ef3f5a;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+}
+
+.flex-form {
+  display: -webkit-box;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 0 0 0 10px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+
+@media all and (max-width:800px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .flex-form {
+    width: 100%;
+  }
+
+  .flex-form > * {
+    font-size: 0.9rem;
+  }
+
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 10px !important;
+  }
+
+  header h2 {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cover {
+    padding: 20px;
+  }
+
+  #madeby {
+    padding: 30px 20px;
+  }
+}
+
+@media all and (max-width:360px) {
+  header nav li{
+    margin: 0 10px;
+  }
+
+  .flex-form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+}
+
+
+
+
+input[type=text4], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color:#008d96;
+  color: black;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+input[type=submit]:hover {
+  background-color: #008B8B;
+
+
+}
+
+div {
+  border-radius: 5px;
+  background-color: rgba(1, 91, 97, 0.4);
+  padding: 20px;
+}
+
+h1 {
+  font-family: Lucida Handwriting, serif;
+  font-size: 60px;
+}
+label {
+  font-family: Lucida Handwriting, serif;
+  font-size: 30px;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: center;
+  padding: 8px;
+  width: 100%;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #008B8B;
+  color: black;
+  width: 100%;
+   font-family: Lucida Handwriting, serif;
+  font-size: 20px;
+}
+</style>
+
+
+
+<body style="background-image:url('https://media.istockphoto.com/photos/elearning-education-concept-learning-online-picture-id1290864946?b=1&k=20&m=1290864946&s=170667a&w=0&h=zZq7rG5McSptSIpEm9f8iTGd3Mrdkcslakr91T7qTYM=');
+background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
+
+
+
+<center>
+<h1>REGISTER YOUR INFORMATION</h1>
+</center>
+<div>
+<form method="POST" action="/new">
+  <label for="lastname">Lastname:</label><br>
+  <input type="text" id="lastname" name="lastname" placeholder ="Enter Your Last Name"><br><br>
+  <label for="firstname">Firstname:</label><br>
+  <input type="text" id="firstname" name="firstname" placeholder ="Enter Your First Name"><br><br>
+  <label for="middlename">Middlename:</label><br>
+  <input type="text" id="middlename" name="middlename" placeholder ="Enter Your Middle Name"><br><br>
+  
+ <input type="submit" id="bAdd" name="bAdd"style="font-size: 16px;" value="Register">
+{% csrf_token %}
+</form>
+<div>
+<table id="kenTable" name='tr'>
+    <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Action</th>
+
+    </tr>
+
+
+       <tr>
+         {% for rinfo in rinfos %}
+         <! -- {{ forloop.counter }}:  -->
+
+        <td>{{ rinfo.rlname}}</td>
+        <td>{{ rinfo.rfname}}</td>
+        <td>{{ rinfo.rmname}}</td>
+  
+
+        <td><b><a href="/{{rinfo.id}}">View Details</a></b></td>
+
+          </tr>
+        {% endfor %}
+    </table>
+
+</div>
+</body>
+</html>
+
