@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Visitors</title>
+    <title>Resident</title>
 
 
 <style>
@@ -34,7 +34,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  background: url('https://littleletterslinked.com/wp-content/uploads/2020/07/HOTEL.jpg') no-repeat center center fixed;
+  background: url('https://media.istockphoto.com/photos/elearning-education-concept-learning-online-picture-id1290864946?b=1&k=20&m=1290864946&s=170667a&w=0&h=zZq7rG5McSptSIpEm9f8iTGd3Mrdkcslakr91T7qTYM=') no-repeat center center fixed;
   background-size: cover;
   color: #0a0a0b;
 }
@@ -241,9 +241,7 @@ a.btn:hover {
         <li>
           <a href="#" title="Contact Us">Contact Us</a>
         </li>
-         <li>
-          <a href="/blog" title="Blog">Blog</a>
-        </li>
+         
       </ul>
     </nav>
   </header>
@@ -261,17 +259,17 @@ a.btn:hover {
 <h4>UPDATE YOUR INFORMATION</h4>
 <form method="POST" action="update/{{ visitors.id }}">
   <label for="vvname">FullName:</label><br>
-  <input type="text" id="vvname" name="vvname" value="{{ visitors.vname }}" placeholder ="Enter your name"><br><br>
+  <input type="text" id="vvname" name="vvname" value="{{ residents.vname }}" placeholder ="Enter your name"><br><br>
   <label for="vvage">Age</label><br>
-  <input type="vvage" id="fpassword" name="vvage" value="{{ visitors.vage }}" placeholder ="Enter your Age"><br><br>
+  <input type="vvage" id="fpassword" name="vvage" value="{{ residents.vage }}" placeholder ="Enter your Age"><br><br>
   <label for="vvcnumber">Contact Number:</label><br>
-  <input type="text" id="vvcnumber" name="vvcnumber" value="{{ visitors.vcnumber }}" placeholder ="Enter your Contact Number"><br><br>
+  <input type="text" id="vvcnumber" name="vvcnumber" value="{{ residents.vcnumber }}" placeholder ="Enter your Contact Number"><br><br>
   <label for="vvemail">Email Address:</label><br>
-  <input type="text" id="vvemail" name="vvemail"value="{{ visitors.vemail }}" placeholder ="Enter your Email Address"><br><br>
+  <input type="text" id="vvemail" name="vvemail"value="{{ residents.vemail }}" placeholder ="Enter your Email Address"><br><br>
   <label for="vvusername">Username:</label><br>
-  <input type="text" id="vvusername" name="vvusername" value="{{ visitors.vusername }}"placeholder ="Enter your Username"><br><br>
+  <input type="text" id="vvusername" name="vvusername" value="{{ residents.vusername }}"placeholder ="Enter your Username"><br><br>
   <label for="vvpassword">Password:</label><br>
-  <input type="text" id="vvpassword" name="vvpassword"value="{{ visitors.vpassword }}" placeholder ="Enter your Password"><br><br>
+  <input type="text" id="vvpassword" name="vvpassword"value="{{ residents.vpassword }}" placeholder ="Enter your Password"><br><br>
   <button type="submit">Update</button>
 
 <label for="vvname">FullName:</label>

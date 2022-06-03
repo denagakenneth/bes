@@ -1,3 +1,4 @@
+
 #from django.http import HttpResponse    
 from django.shortcuts import redirect, render
 from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
@@ -17,7 +18,7 @@ def view_list(request, rinfo_id):
    return render(request, 'b.html', {'rinfo': rinfo_})
    
 def add_item(request):     
-   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'])
+   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],rpass=request.POST['rrpass'])
    return redirect(f'/{newrinfo_.id}/') 
   
 

@@ -39,9 +39,20 @@ class BSMSTest(LiveServerTestCase):
         inputlnmae = self.browser.find_element_by_id('lastname')
         inputfname = self.browser.find_element_by_id('firstname')
         inputmname = self.browser.find_element_by_id('middlename')
+        inputrradd = self.browser.find_element_by_id('rraddress')
+        inputrrrage = self.browser.find_element_by_id('rrage')
+        inputrcnum = self.browser.find_element_by_id('rccnumber')
+        inputrrruname = self.browser.find_element_by_id('rruname')
+        inputrrrpass = self.browser.find_element_by_id('rrpass')
+
         self.assertEqual(inputlnmae.get_attribute('placeholder'),'Enter Your Last Name')
         self.assertEqual(inputfname.get_attribute('placeholder'),'Enter Your First Name')
         self.assertEqual(inputmname.get_attribute('placeholder'),'Enter Your Middle Name')
+        self.assertEqual(inputrradd.get_attribute('placeholder'),'Enter Your Address')
+        self.assertEqual(inputrrrage.get_attribute('placeholder'),'Enter Your Age')
+        self.assertEqual(inputrcnum.get_attribute('placeholder'),'Enter Your Contact Number')
+        self.assertEqual(inputrrruname.get_attribute('placeholder'),'Enter Your Username')
+        self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')
         
         time.sleep(1)
         inputlnmae =  self.browser.find_element_by_id('lastname')
@@ -57,7 +68,31 @@ class BSMSTest(LiveServerTestCase):
         inputmnmae =  self.browser.find_element_by_id('middlename')
         inputmnmae.click()
         inputmnmae.send_keys('Faller')
+
+        time.sleep(1)
+        inputrradd =  self.browser.find_element_by_id('rraddress')
+        inputrradd.click()
+        inputrradd.send_keys('Blk. 111 lot 8')
+
+        time.sleep(1)
+        inputrrrage =  self.browser.find_element_by_id('rrage')
+        inputrrrage.click()
+        inputrrrage.send_keys('18')
+
+        time.sleep(1)
+        inputrcnum =  self.browser.find_element_by_id('rccnumber')
+        inputrcnum.click()
+        inputrcnum.send_keys('0905-499-0958')
+
+        time.sleep(1)
+        inputrrruname =  self.browser.find_element_by_id('rruname')
+        inputrrruname.click()
+        inputrrruname.send_keys('kokoyoishi')
         
+        time.sleep(1)
+        inputrrrpass =  self.browser.find_element_by_id('rrpass')
+        inputrrrpass.click()
+        inputrrrpass.send_keys('88888888')
 
         
         

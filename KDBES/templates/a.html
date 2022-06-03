@@ -329,6 +329,16 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
   <input type="text" id="firstname" name="firstname" placeholder ="Enter Your First Name"><br><br>
   <label for="middlename">Middlename:</label><br>
   <input type="text" id="middlename" name="middlename" placeholder ="Enter Your Middle Name"><br><br>
+  <label for="rraddress ">Address:</label><br>
+  <input type="text" id="rraddress" name="rraddress" placeholder ="Enter Your Address"><br><br>
+  <label for="rrage">Age</label><br>
+  <input type="text" id="rrage" name="rrage" placeholder ="Enter Your Age"><br><br>
+  <label for="rccnumber ">Contact Number:</label><br>
+  <input type="text" id="rccnumber" name="rccnumber" placeholder ="Enter Your Contact Number"><br><br>
+  <label for="rruname">Username:</label><br>
+  <input type="text" id="rruname" name="rruname" placeholder ="Enter Your Username"><br><br>
+  <label for="rrpass">Password:</label><br>
+  <input type="text" id="rrpass" name="rrpass" placeholder ="Enter Your Password"><br><br>
   
  <input type="submit" id="bAdd" name="bAdd"style="font-size: 16px;" value="Register">
 {% csrf_token %}
@@ -339,6 +349,11 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
     <th>Last Name</th>
     <th>First Name</th>
     <th>Middle Name</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Contact No.</th>
+    <th>Username</th>
+    <th>Password</th>
     <th>Action</th>
 
     </tr>
@@ -351,6 +366,11 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
         <td>{{ rinfo.rlname}}</td>
         <td>{{ rinfo.rfname}}</td>
         <td>{{ rinfo.rmname}}</td>
+        <td>{{ rinfo.raddress}}</td>
+        <td>{{ rinfo.rage}}</td>
+        <td>{{ rinfo.rcnumber}}</td>
+        <td>{{ rinfo.runame}}</td>
+        <td>********</td>
   
 
         <td><b><a href="/{{rinfo.id}}">View Details</a></b></td>
