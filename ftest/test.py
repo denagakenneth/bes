@@ -107,7 +107,7 @@ class BSMSTest(LiveServerTestCase):
         inputbdate = self.browser.find_element_by_id('bbdate')
         self.assertEqual(inputblocation.get_attribute('placeholder'),'Enter Court Location')
         self.assertEqual(inputbcategory.get_attribute('placeholder'),'Enter Event')
-        self.assertEqual(inputbdate.get_attribute('placeholder'),'Enter Date')
+        self.assertEqual(inputbdate.get_attribute('placeholder'),'')
         
         time.sleep(1)
         inputblocation =  self.browser.find_element_by_id('bblocation')

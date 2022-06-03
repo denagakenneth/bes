@@ -258,7 +258,7 @@ input[type=date] {
 input[type=submit] {
   width: 100%;
   background-color:#008d96;
-  color: black;
+  color: aquamarine;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -272,6 +272,24 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #008B8B;
 
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color:#008d96;
+  color: red;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+input[type=reset]:hover {
+  background-color: #008B8B;
 
 }
 
@@ -324,23 +342,24 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <div>
 <form method="POST" action="/new">
   <label for="lastname">Lastname:</label><br>
-  <input type="text" id="lastname" name="lastname" placeholder ="Enter Your Last Name"><br><br>
+  <input type="text" id="lastname" name="lastname" maxlength="30" placeholder ="Enter Your Last Name" required="required" /><br><br>
   <label for="firstname">Firstname:</label><br>
-  <input type="text" id="firstname" name="firstname" placeholder ="Enter Your First Name"><br><br>
+  <input type="text" id="firstname" name="firstname" maxlength="30" placeholder ="Enter Your First Name" required="required" /><br><br>
   <label for="middlename">Middlename:</label><br>
-  <input type="text" id="middlename" name="middlename" placeholder ="Enter Your Middle Name"><br><br>
+  <input type="text" id="middlename" name="middlename" maxlength="30" placeholder ="Enter Your Middle Name" required="required" /><br><br>
   <label for="rraddress ">Address:</label><br>
-  <input type="text" id="rraddress" name="rraddress" placeholder ="Enter Your Address"><br><br>
+  <input type="text" id="rraddress" name="rraddress" maxlength="50"placeholder ="Enter Your Address" required="required" /><br><br>
   <label for="rrage">Age</label><br>
-  <input type="text" id="rrage" name="rrage" placeholder ="Enter Your Age"><br><br>
+  <input type="text" id="rrage" name="rrage" maxlength="2" placeholder ="Enter Your Age" required="required" /><br><br>
   <label for="rccnumber ">Contact Number:</label><br>
-  <input type="text" id="rccnumber" name="rccnumber" placeholder ="Enter Your Contact Number"><br><br>
+  <input type="text" id="rccnumber" name="rccnumber" maxlength="11"  placeholder ="Enter Your Contact Number" required="required" /><br><br>
   <label for="rruname">Username:</label><br>
-  <input type="text" id="rruname" name="rruname" placeholder ="Enter Your Username"><br><br>
+  <input type="text" id="rruname" name="rruname" maxlength="30" placeholder ="Enter Your Username" required="required" /><br><br>
   <label for="rrpass">Password:</label><br>
-  <input type="text" id="rrpass" name="rrpass" placeholder ="Enter Your Password"><br><br>
+  <input type="text" id="rrpass" name="rrpass" maxlength="15" placeholder ="Enter Your Password" required="required" /><br><br>
   
  <input type="submit" id="bAdd" name="bAdd"style="font-size: 16px;" value="Register">
+ <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
 </form>
 <div>

@@ -39,13 +39,14 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <form method="POST" action="/{{rinfo.id}}/add_info">
 
   <label for="bblocation">Event:</label><br>
-  <input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">
+  <input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location" required="required" />
   <label for="bbcategory">Event:</label><br>
-  <input type="text" id="bbcategory" name="bbcategory" placeholder ="Enter Event">
+  <input type="text" id="bbcategory" name="bbcategory" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
-  <input type="text" id="bbdate" name="bbdate" placeholder ="Enter Date">
+  <input type="date" id="bbdate" name="bbdate" placeholder ="" required="required" />
   
-  <input type="submit" id="bAdd" name="bAdd" style="font-size: 16px;" value="Book"><br>
+  <input type="submit" id="bAdd" name="bAdd" style="font-size: 16px;" value="Reserve"><br>
+  <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
 
 
@@ -368,6 +369,25 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #BLUE;
 
+
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color:#008d96;
+  color: red;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+input[type=reset]:hover {
+  background-color: #008B8B;
 
 }
 
