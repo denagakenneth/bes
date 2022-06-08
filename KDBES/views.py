@@ -7,21 +7,25 @@ def home_page(request):
      rinfos = Rinfo.objects.all()
      return render(request, 'a.html',{'rinfos' : rinfos})
 
+def add_item(request):     
+   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],
+    raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],
+    rpass=request.POST['rrpass'])
+   return redirect(f'/{newrinfo_.id}/') 
+
+def view_list(request, rinfo_id):    
+   rinfo_ = Rinfo.objects.get(id=rinfo_id)
+   return render(request, 'b.html', {'rinfo': rinfo_})
+
   
 def add_info(request, rinfo_id):    
    rinfo_ = Rinfo.objects.get(id=rinfo_id)    
    Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],rinfo=rinfo_)
    return redirect(f'/{rinfo_.id}/')    
    
-def view_list(request, rinfo_id):    
-   rinfo_ = Rinfo.objects.get(id=rinfo_id)
-   return render(request, 'b.html', {'rinfo': rinfo_})
+
    
-def add_item(request):     
-   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],
-    raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],
-    rpass=request.POST['rrpass'])
-   return redirect(f'/{newrinfo_.id}/') 
+
   
 
 
