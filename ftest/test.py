@@ -106,10 +106,16 @@ class BSMSTest(LiveServerTestCase):
         inputbcategory = self.browser.find_element_by_id('bbcategory')
         inputbdate = self.browser.find_element_by_id('bbdate')
         inputbbdstime = self.browser.find_element_by_id('bbbstime')
+        inputbbdetime = self.browser.find_element_by_id('bbbetime')
+        inputbbbpeople = self.browser.find_element_by_id('bbpeople')
+        inputbbbhours = self.browser.find_element_by_id('bbhours')
         self.assertEqual(inputblocation.get_attribute('placeholder'),'Enter Court Location')
         self.assertEqual(inputbcategory.get_attribute('placeholder'),'Enter Event')
         self.assertEqual(inputbdate.get_attribute('placeholder'),'')
         self.assertEqual(inputbbdstime.get_attribute('placeholder'),'')
+        self.assertEqual(inputbbdetime.get_attribute('placeholder'),'')
+        self.assertEqual(inputbbbpeople.get_attribute('placeholder'),'')
+        self.assertEqual(inputbbbhours.get_attribute('placeholder'),'')
         
         time.sleep(1)
         inputblocation =  self.browser.find_element_by_id('bblocation')
@@ -130,6 +136,21 @@ class BSMSTest(LiveServerTestCase):
         inputbbdstime =  self.browser.find_element_by_id('bbbstime')
         inputbbdstime.click()
         inputbbdstime.send_keys('12 PM')
+
+        time.sleep(1)
+        inputbbdetime =  self.browser.find_element_by_id('bbbetime')
+        inputbbdetime.click()
+        inputbbdetime.send_keys('3 PM')
+
+        time.sleep(1)
+        inputbbbpeople =  self.browser.find_element_by_id('bbpeople')
+        inputbbbpeople.click()
+        inputbbbpeople.send_keys('200')
+
+        time.sleep(1)
+        inputbbbhours =  self.browser.find_element_by_id('bbhours')
+        inputbbbhours.click()
+        inputbbbhours.send_keys('3')
         
         
         bAdd = self.browser.find_element_by_id('bAdd')
@@ -151,10 +172,27 @@ class BSMSTest(LiveServerTestCase):
         inputbdate =  self.browser.find_element_by_id('bbdate')
         inputbdate.click()
         inputbdate.send_keys('May 26, 2022')
+        
         time.sleep(1)
         inputbbdstime =  self.browser.find_element_by_id('bbbstime')
         inputbbdstime.click()
         inputbbdstime.send_keys('2 PM')
+
+        time.sleep(1)
+        inputbbdetime =  self.browser.find_element_by_id('bbbetime')
+        inputbbdetime.click()
+        inputbbdetime.send_keys('5 PM')
+
+        time.sleep(1)
+        inputbbbpeople =  self.browser.find_element_by_id('bbpeople')
+        inputbbbpeople.click()
+        inputbbbpeople.send_keys('400')
+
+        time.sleep(1)
+        inputbbbhours =  self.browser.find_element_by_id('bbhours')
+        inputbbbhours.click()
+        inputbbbhours.send_keys('3')
+
         
         
         bAdd = self.browser.find_element_by_id('bAdd')
@@ -180,6 +218,21 @@ class BSMSTest(LiveServerTestCase):
         inputbbdstime =  self.browser.find_element_by_id('bbbstime')
         inputbbdstime.click()
         inputbbdstime.send_keys('1 PM')
+
+        time.sleep(1)
+        inputbbdetime =  self.browser.find_element_by_id('bbbetime')
+        inputbbdetime.click()
+        inputbbdetime.send_keys('4 PM')
+
+        time.sleep(1)
+        inputbbbpeople =  self.browser.find_element_by_id('bbpeople')
+        inputbbbpeople.click()
+        inputbbbpeople.send_keys('500')
+
+        time.sleep(1)
+        inputbbbhours =  self.browser.find_element_by_id('bbhours')
+        inputbbbhours.click()
+        inputbbbhours.send_keys('3')
         
         
         bAdd = self.browser.find_element_by_id('bAdd')

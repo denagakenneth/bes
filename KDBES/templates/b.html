@@ -45,7 +45,13 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
   <label for="bbdate">Date</label><br>
   <input type="text" id="bbdate" name="bbdate" placeholder ="" required="required" />
   <label for="bbdate">Start Time</label><br>
-  <input type="text" id="bbbstime" name="bbbstime" placeholder ="">
+  <input type="text" id="bbbstime" name="bbbstime" placeholder ="" required="required" />
+  <label for="bbdate">End Time</label><br>
+  <input type="text" id="bbbetime" name="bbbetime" placeholder ="" required="required" />
+  <label for="bbdate">Probably Number of People:</label><br>
+  <input type="text" id="bbpeople" name="bbpeople" placeholder ="" required="required" />
+  <label for="bbdate">Number of Hours:</label><br>
+  <input type="text2" id="bbhours" name="bbhours" placeholder ="" required="required" />
   
   <input type="submit" id="bAdd" name="bAdd" style="font-size: 16px;" value="Reserve"><br>
   <input type="reset" style="font-size: 16px;" class="button" value="Clear">
@@ -72,6 +78,9 @@ function cclass()
     <th>Event</th>
     <th>Date</th>
     <th>Start Time</th>
+    <th>End Time</th>
+    <th>No. of Attendies</th>
+    <th>Hours</th>
     <th>Action</th>
     </tr>
 
@@ -83,6 +92,9 @@ function cclass()
         <td>{{ bevent.bcategory}}</td>
         <td>{{ bevent.bdate}}</td>
         <td>{{ bevent.bbstime}}</td>
+        <td>{{ bevent.bbetime}}</td>
+        <td>{{ bevent.bpeople}}</td>
+        <td>{{ bevent.bhours}}</td>
         
         <td><a href="/{{rinfo.id}}/next/bookview">Status</a></td>
 
@@ -306,7 +318,17 @@ a.btn:hover {
 
 }
 
-
+input[type=text2], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
 
 
 input[type=text4], select {
