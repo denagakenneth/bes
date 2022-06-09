@@ -1,4 +1,3 @@
-
 #from django.http import HttpResponse    
 from django.shortcuts import redirect, render
 from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
@@ -23,24 +22,15 @@ def add_info(request, rinfo_id):
    Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],
     bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bpeople=request.POST['bbpeople'],bhours=request.POST['bbhours'],rinfo=rinfo_)
    return redirect(f'/{rinfo_.id}/')    
-   
-
-   
-
   
 
 
 
 
+   '''
 
 
-
-
-
-
-
-
-'''from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
 from django.contrib.auth import authenticate
@@ -49,7 +39,7 @@ from kenlist import settings
 
 
 def home_page(request):
-    return render(request, 'a.html')
+    return render(request, 'homepage.html')
 def home_log(request):
  if request.method == 'POST':
         if Rinfo.objects.filter(runame=request.POST['rruname'], rpass=request.POST['rrpass']).exists():
@@ -91,9 +81,9 @@ def new_list(request):
 
 
 def view_list(request, rinfo_id):
-    locations = Location.objects.all()
+    #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    return render(request, 'abooking.html',{'rinfo': rinfo_,'location':locations})
+    return render(request, 'abooking.html',{'rinfo': rinfo_})
 
 def add_item(request, rinfo_id):
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
@@ -107,10 +97,9 @@ def next2(request):
     return render(request, '5model .html')
 
 def bookstatus(request, rinfo_id):
-    locations = Location.objects.all()
+    #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id= rinfo_id)
-    return render(request, 'bookstatus.html', {'rinfo':rinfo_,'location' : locations
-})
+    return render(request, 'bookstatus.html', {'rinfo':rinfo_})
 def statusupdate(request, rinfo_id):
     rinfo = Bevent.objects.get(id=rinfo_id)
     rinfo.bstatus= request.POST['bbstatus']
@@ -121,9 +110,9 @@ def register(request):
     return render(request, 'register.html', {'rinfos':rinfos})
 
 def bookview(request, rinfo_id):
-    locations = Location.objects.all()
+    #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    return render(request, 'bookview.html', {'rinfo':rinfo_,'location':locations})
+    return render(request, 'bookview.html', {'rinfo':rinfo_})
 
 
 def aaccount(request):
@@ -144,25 +133,25 @@ def adminbook(request):
     return render(request, 'adminbooklist.html', {'rinfos':rinfos})
 
 
-def add_location(request, id):
+#def add_location(request, id):
   # if request.method=="POST":
    #zlocation = Zlocation.objects.get(id=id)
-   zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+   #zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
    #zlocation.llocation = request.POST['lllocation']
    #zlocation.laddress = request.POST['lladdress']
    #   name=request.POST['name']
      #   age=request.POST['age']
     #    address=request.POST['address']
     #  obj=Details.objects.create(name=name,age=age,address=address)
-   zlocation.save()
+   #zlocation.save()
 
-   return redirect('/location')
+   #return redirect('/location')
 
-def view_location(request):
+#def view_location(request):
 
-    zlocations = Zlocation.objects.all()
+    #zlocations = Zlocation.objects.all()
 
-    return render(request, 'LocationReg.html', {'zlocation':zlocations})
+    #return render(request, 'LocationReg.html', {'zlocation':zlocations})
 
 
 
@@ -193,3 +182,20 @@ def index(request):
     else:
         return render(request, 'index.html')
 '''
+
+
+
+   
+
+  
+
+
+
+
+
+
+
+
+
+
+

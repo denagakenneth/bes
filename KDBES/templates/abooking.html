@@ -39,28 +39,28 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <form method="POST" action="/{{rinfo.id}}/add_item">
 
   <label for="bblocation">Court Location:</label><br>
- <!--<select id="bblocation" name="bblocation">
-            <option value="0">Mode of Payment</option> 
+ <select id="bblocation" name="bblocation">
+            <option value="0">Available Court here!</option> 
       <option value="{{ location.bblocation }}">{{ location.bblocation }}</option>
     
-      </select>-->
-  <input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">
+      </select>
+  <!--<input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">-->
   <label for="bbcategory">Event:</label><br>
-  <input type="text" id="bbcategory" name="bbcategory" placeholder ="Enter Event">
+  <input type="text" id="bbcategory" name="bbcategory" maxlength="40" placeholder ="Enter Event">
   <label for="bbdate">Date</label><br>
   <input type="date" id="bbdate" name="bbdate" placeholder ="">
   <label for="bbbstime">Start Time:</label><br>
   <input id="bbbstime" type="time" name="bbbstime"
-             min="12:00" max="18:00" required>
+             min="3:00" max="24:00" required>
 
   <label for="bbbetime">End Time:</label><br>
     <input id="bbbetime" type="time" name="bbbetime"
-             min="12:00" max="18:00" required>
+             min="3:00" max="24:00" required>
 <br><br>
-  <label for="bbpeople">Probably Number of People:</label><br>
-  <input type="text" id="bbpeople" name="bbpeople" placeholder ="">
+  <label for="bbpeople">Estimated Number of Attendies:</label><br>
+  <input type="text" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="">
   <label for="bbhours">Number of Hours:</label><br>
-  <input type="text2" id="bbhours" name="bbhours" placeholder="Number of Hours" >
+  <input type="text2" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" >
  
   <input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>
   <label for r="bbrates">Rates:</label><br>
