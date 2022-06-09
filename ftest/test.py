@@ -36,7 +36,7 @@ class BSMSTest(LiveServerTestCase):
         self.assertIn('REGISTER YOUR INFORMATION', header_text)  
          
         
-        inputlnmae = self.browser.find_element_by_id('lastname')
+        inputlname = self.browser.find_element_by_id('lastname')
         inputfname = self.browser.find_element_by_id('firstname')
         inputmname = self.browser.find_element_by_id('middlename')
         inputrradd = self.browser.find_element_by_id('rraddress')
@@ -45,7 +45,7 @@ class BSMSTest(LiveServerTestCase):
         inputrrruname = self.browser.find_element_by_id('rruname')
         inputrrrpass = self.browser.find_element_by_id('rrpass')
 
-        self.assertEqual(inputlnmae.get_attribute('placeholder'),'Enter Your Last Name')
+        self.assertEqual(inputlname.get_attribute('placeholder'),'Enter Your Last Name')
         self.assertEqual(inputfname.get_attribute('placeholder'),'Enter Your First Name')
         self.assertEqual(inputmname.get_attribute('placeholder'),'Enter Your Middle Name')
         self.assertEqual(inputrradd.get_attribute('placeholder'),'Enter Your Address')
@@ -55,19 +55,19 @@ class BSMSTest(LiveServerTestCase):
         self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')
         
         time.sleep(1)
-        inputlnmae =  self.browser.find_element_by_id('lastname')
-        inputlnmae.click()
-        inputlnmae.send_keys('Denaga')
+        inputlname =  self.browser.find_element_by_id('lastname')
+        inputlname.click()
+        inputlname.send_keys('Denaga')
        
         time.sleep(1)
-        inputfnmae =  self.browser.find_element_by_id('firstname')
-        inputfnmae.click()
-        inputfnmae.send_keys('Kenneth')
+        inputfname =  self.browser.find_element_by_id('firstname')
+        inputfname.click()
+        inputfname.send_keys('Kenneth')
         
         time.sleep(1)
-        inputmnmae =  self.browser.find_element_by_id('middlename')
-        inputmnmae.click()
-        inputmnmae.send_keys('Faller')
+        inputmname =  self.browser.find_element_by_id('middlename')
+        inputmname.click()
+        inputmname.send_keys('Faller')
 
         time.sleep(1)
         inputrradd =  self.browser.find_element_by_id('rraddress')
@@ -105,9 +105,11 @@ class BSMSTest(LiveServerTestCase):
         inputblocation= self.browser.find_element_by_id('bblocation')
         inputbcategory = self.browser.find_element_by_id('bbcategory')
         inputbdate = self.browser.find_element_by_id('bbdate')
+        inputbbdstime = self.browser.find_element_by_id('bbbstime')
         self.assertEqual(inputblocation.get_attribute('placeholder'),'Enter Court Location')
         self.assertEqual(inputbcategory.get_attribute('placeholder'),'Enter Event')
         self.assertEqual(inputbdate.get_attribute('placeholder'),'')
+        self.assertEqual(inputbbdstime.get_attribute('placeholder'),'')
         
         time.sleep(1)
         inputblocation =  self.browser.find_element_by_id('bblocation')
@@ -123,6 +125,11 @@ class BSMSTest(LiveServerTestCase):
         inputbdate =  self.browser.find_element_by_id('bbdate')
         inputbdate.click()
         inputbdate.send_keys('May 22, 2022')
+
+        time.sleep(1)
+        inputbbdstime =  self.browser.find_element_by_id('bbbstime')
+        inputbbdstime.click()
+        inputbbdstime.send_keys('12 PM')
         
         
         bAdd = self.browser.find_element_by_id('bAdd')
@@ -144,6 +151,35 @@ class BSMSTest(LiveServerTestCase):
         inputbdate =  self.browser.find_element_by_id('bbdate')
         inputbdate.click()
         inputbdate.send_keys('May 26, 2022')
+        time.sleep(1)
+        inputbbdstime =  self.browser.find_element_by_id('bbbstime')
+        inputbbdstime.click()
+        inputbbdstime.send_keys('2 PM')
+        
+        
+        bAdd = self.browser.find_element_by_id('bAdd')
+        bAdd.click()
+        time.sleep(1)
+
+
+        inputblocation =  self.browser.find_element_by_id('bblocation')
+        inputblocation.click()
+        inputblocation.send_keys('Paliparan')
+        
+        time.sleep(1)
+        inputbcategory =  self.browser.find_element_by_id('bbcategory')
+        inputbcategory.click()
+        inputbcategory.send_keys('Seminar 2022')
+        
+        time.sleep(1)
+        inputbdate =  self.browser.find_element_by_id('bbdate')
+        inputbdate.click()
+        inputbdate.send_keys('June 26, 2022')
+
+        time.sleep(1)
+        inputbbdstime =  self.browser.find_element_by_id('bbbstime')
+        inputbbdstime.click()
+        inputbbdstime.send_keys('1 PM')
         
         
         bAdd = self.browser.find_element_by_id('bAdd')

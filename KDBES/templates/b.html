@@ -38,12 +38,14 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <div>
 <form method="POST" action="/{{rinfo.id}}/add_info">
 
-  <label for="bblocation">Event:</label><br>
+  <label for="bblocation">Court Location:</label><br>
   <input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location" required="required" />
   <label for="bbcategory">Event:</label><br>
   <input type="text" id="bbcategory" name="bbcategory" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
   <input type="text" id="bbdate" name="bbdate" placeholder ="" required="required" />
+  <label for="bbdate">Start Time</label><br>
+  <input type="text" id="bbbstime" name="bbbstime" placeholder ="">
   
   <input type="submit" id="bAdd" name="bAdd" style="font-size: 16px;" value="Reserve"><br>
   <input type="reset" style="font-size: 16px;" class="button" value="Clear">
@@ -69,6 +71,7 @@ function cclass()
     <th>Location</th>
     <th>Event</th>
     <th>Date</th>
+    <th>Start Time</th>
     <th>Action</th>
     </tr>
 
@@ -79,6 +82,7 @@ function cclass()
         <td>{{ bevent.blocation }}</td>
         <td>{{ bevent.bcategory}}</td>
         <td>{{ bevent.bdate}}</td>
+        <td>{{ bevent.bbstime}}</td>
         
         <td><a href="/{{rinfo.id}}/next/bookview">Status</a></td>
 

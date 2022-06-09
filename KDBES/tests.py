@@ -68,7 +68,7 @@ class InfoTest(TestCase):
       
       self.client.post(            
           f'/{correct_rinfo.id}/add_info',            
-          data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date'})            
+          data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date','bbbstime': 'New Start Time'})            
       
       self.assertEqual(Bevent.objects.count(), 1)        
       new_info= Bevent.objects.first()        
@@ -80,7 +80,7 @@ class InfoTest(TestCase):
       correct_rinfo = Rinfo.objects.create()        
       response = self.client.post(            
           f'/{correct_rinfo.id}/add_info',            
-         data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date'})       
+         data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date','bbbstime': 'New Start Time'})       
             
       self.assertRedirects(response, f'/{correct_rinfo.id}/')
       

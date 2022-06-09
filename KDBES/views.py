@@ -20,7 +20,8 @@ def view_list(request, rinfo_id):
   
 def add_info(request, rinfo_id):    
    rinfo_ = Rinfo.objects.get(id=rinfo_id)    
-   Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],rinfo=rinfo_)
+   Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],
+    bbstime=request.POST['bbbstime'],rinfo=rinfo_)
    return redirect(f'/{rinfo_.id}/')    
    
 

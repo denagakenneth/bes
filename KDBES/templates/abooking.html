@@ -39,13 +39,14 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <form method="POST" action="/{{rinfo.id}}/add_item">
 
   <label for="bblocation">Court Location:</label><br>
- <select id="bblocation" name="bblocation">
-            <option value="0">Mode of Payment</option>
+ <!--<select id="bblocation" name="bblocation">
+            <option value="0">Mode of Payment</option> 
       <option value="{{ location.bblocation }}">{{ location.bblocation }}</option>
     
-      </select>
+      </select>-->
+  <input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">
   <label for="bbcategory">Event:</label><br>
-  <input type="text" id="bbcategory" name="bbcategory" placeholder ="">
+  <input type="text" id="bbcategory" name="bbcategory" placeholder ="Enter Event">
   <label for="bbdate">Date</label><br>
   <input type="date" id="bbdate" name="bbdate" placeholder ="">
   <label for="bbbstime">Start Time:</label><br>
@@ -56,14 +57,14 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
     <input id="bbbetime" type="time" name="bbbetime"
              min="12:00" max="18:00" required>
 <br><br>
-  <label for="bbpeople">Estimated Number of People:</label><br>
+  <label for="bbpeople">Probably Number of People:</label><br>
   <input type="text" id="bbpeople" name="bbpeople" placeholder ="">
   <label for="bbhours">Number of Hours:</label><br>
-  <input type="text4" id="bbhours" name="bbhours" placeholder="Number of Hours" >
+  <input type="text2" id="bbhours" name="bbhours" placeholder="Number of Hours" >
  
   <input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>
   <label for r="bbrates">Rates:</label><br>
-  <input type="text4" id="bbrates" name="bbrates" placeholder="Amount" readonly ><br><br>
+  <input type="text2" id="bbrates" name="bbrates" placeholder="Amount" readonly ><br><br>
 
   <input type="submit" id="bbook" name="bbook" style="font-size: 16px;" value="Reserve"><br>
   <input type="reset" style="font-size: 16px;" class="button" value="Clear">
@@ -334,7 +335,7 @@ a.btn:hover {
 
 
 
-input[type=text4], select {
+input[type=text2], select {
   width: 100%;
   padding: 12px 20px;
   margin: 8px 0;
@@ -350,7 +351,7 @@ input[type=time], select {
   padding: 12px 20px;
   margin: 8px 0;
   display: inline-block;
-  border: 1px solid #ccc;
+  border: 1px solid #FF0000;
   border-radius: 4px;
   box-sizing: border-box;
   font-family: Copperplate, serif;
