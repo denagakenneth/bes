@@ -1,12 +1,13 @@
 from django.urls import include, re_path
 from KDBES import views
+from django.urls import re_path as url
 
 
 urlpatterns = [    
-    re_path(r'^$', views.home_page, name='home_page'),    
-    re_path(r'^new$', views.add_item, name='add_item'),    
-    re_path(r'^(\d+)/$', views.view_list, name='view_list'),    
-    re_path(r'^(\d+)/add_info$', views.add_info, name='add_info'),]
+    url(r'^$', views.home_page, name='home_page'),    
+    url(r'^new$', views.add_item, name='add_item'),    
+    url(r'^(\d+)/$', views.view_list, name='view_list'),    
+    url(r'^(\d+)/add_info$', views.add_info, name='add_info'),]
     
 
 
