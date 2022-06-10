@@ -11,6 +11,7 @@ class Rinfo(models.Model):
     runame  = models.TextField(default='')
     rpass  = models.TextField(default='')
 
+#for the Event Details
 class Bevent(models.Model):
     blocation = models.TextField(default='')
     bcategory = models.TextField(default='')
@@ -23,18 +24,19 @@ class Bevent(models.Model):
     bstat  = models.TextField(default='')
     rinfo = models.ForeignKey(Rinfo, default="", on_delete = models.CASCADE)
 
-
+#This model is for Admin view to set available court 
 class Zlocation(models.Model):
     llocation = models.TextField(default='')
     laddress = models.TextField(default='')
     bevent = models.ForeignKey(Bevent, default="", on_delete = models.CASCADE)
 
+#This model is for Admin view to Approve and disapprove the request of reservation
 class Zremarks(models.Model):
     sremarks = models.TextField(default='') 
     zdate = models.TextField(default='') 
     bevent = models.ForeignKey(Bevent, default="", on_delete = models.CASCADE)
 
-#Model for Admin registration
+#Model for Admin Log-in
 class Areg(models.Model):
     ausername = models.TextField(default='')
     apassword = models.TextField(default='')

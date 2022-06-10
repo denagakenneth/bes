@@ -42,14 +42,14 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
     <th>End Time</th>
     <th>People</th>
     <th>Hours</th>
-   <!-- <th>Rates</th>-->
+    <th>Rates</th>
     <th>Status</th>
 
     </tr>
 
        <tr>
              {% for bevent in rinfo.bevent_set.all %}
-         <! -- {{ forloop.counter }}:  -->
+               <! -- {{ forloop.counter }}:  -->
 
  
         <td>{{ bevent.blocation }}</td>
@@ -59,7 +59,7 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
         <td>{{ bevent.betime}}</td>
         <td>{{ bevent.bpeople}}</td>
         <td>{{ bevent.bhours}}</td>
-        <!--<td>{{ bevent.brates}}</td>-->
+        <td>{{ bevent.brates}}</td>
 
        <td><select id="bbstatus" name="bbstatus" onchange="cclass();">
 		        <option value="">Select Status</option>
