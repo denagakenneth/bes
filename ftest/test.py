@@ -155,7 +155,7 @@ class BSMSTest(LiveServerTestCase):
         
         bAdd = self.browser.find_element_by_id('bAdd')
         bAdd.click()
-        
+        '''
         time.sleep(1)
         
         inputblocation =  self.browser.find_element_by_id('bblocation')
@@ -237,4 +237,4 @@ class BSMSTest(LiveServerTestCase):
         bAdd = self.browser.find_element_by_id('bAdd')
         bAdd.click()
         time.sleep(1)
-        
+        '''
