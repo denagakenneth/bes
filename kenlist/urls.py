@@ -6,7 +6,8 @@ from django.urls import re_path as url
 urlpatterns = [    
     url(r'^$', views.home_page, name='home_page'),    
     url(r'^new$', views.add_item, name='add_item'),    
-    url(r'^(\d+)/$', views.view_list, name='view_list'),    
+    url(r'^(\d+)/$', views.view_list, name='view_list'),
+    url(r'^register$', views.register, name='register'),    
     url(r'^(\d+)/add_info$', views.add_info, name='add_info'),]
     
 

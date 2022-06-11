@@ -114,8 +114,8 @@ class BSMSTest(LiveServerTestCase):
         self.assertEqual(inputbdate.get_attribute('placeholder'),'')
         self.assertEqual(inputbbdstime.get_attribute('placeholder'),'')
         self.assertEqual(inputbbdetime.get_attribute('placeholder'),'')
-        self.assertEqual(inputbbbpeople.get_attribute('placeholder'),'')
-        self.assertEqual(inputbbbhours.get_attribute('placeholder'),'')
+        self.assertEqual(inputbbbpeople.get_attribute('placeholder'),'Enter No. of Attendies')
+        self.assertEqual(inputbbbhours.get_attribute('placeholder'),'Enter No. of Hours')
         
         time.sleep(1)
         inputblocation =  self.browser.find_element_by_id('bblocation')

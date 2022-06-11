@@ -194,6 +194,7 @@ def delete(request, id):
     rinfo = Rinfo.objects.get(id=id)
     rinfo.delete()
     return redirect('/')
+
 # Create your views here.
 def index(request):
     if request.method == 'POST':
