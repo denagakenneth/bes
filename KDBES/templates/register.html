@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Registration</title>
+    <title>Register</title>
 
 
 <style>
@@ -258,7 +258,7 @@ input[type=date] {
 input[type=submit] {
   width: 100%;
   background-color:#008d96;
-  color: black;
+  color: ghostwhite;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
@@ -272,6 +272,25 @@ input[type=submit] {
 input[type=submit]:hover {
   background-color: #008B8B;
 
+
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color:#008d96;
+  color: red;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+input[type=reset]:hover {
+  background-color: #008B8B;
 
 }
 
@@ -313,7 +332,7 @@ th {
 
 
 
-<body style="background-image:url('https://images.unsplash.com/photo-1490093158370-1a6be674437b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1014&q=80');
+<body style="background-image:url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1pbmltYWxpc3QlMjBvZmZpY2V8ZW58MHx8MHx8&w=1000&q=80');
 background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
 
 
@@ -323,24 +342,25 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 </center>
 <div>
 <form method="POST" action="/new">
-  <label for="rrlname">Lastname:</label><br>
-  <input type="text" id="rrlname" name="rrlname" placeholder ="Enter your name"><br><br>
-  <label for="rrfname">Firstname:</label><br>
-  <input type="text" id="rrfname" name="rrfname" placeholder ="Enter your name"><br><br>
-  <label for="rrmname">Middlename:</label><br>
-  <input type="text" id="rrmname" name="rrmname" placeholder ="Enter your name"><br><br>
+   <label for="lastname">Lastname:</label><br>
+  <input type="text" id="lastname" name="lastname" maxlength="30" placeholder ="Enter Your Last Name" required="required" /><br><br>
+  <label for="firstname">Firstname:</label><br>
+  <input type="text" id="firstname" name="firstname" maxlength="30" placeholder ="Enter Your First Name" required="required" /><br><br>
+  <label for="middlename">Middlename:</label><br>
+  <input type="text" id="middlename" name="middlename" maxlength="30" placeholder ="Enter Your Middle Name" required="required" /><br><br>
   <label for="rraddress ">Address:</label><br>
-  <input type="text" id="rraddress" name="rraddress" placeholder ="Enter your  Address"><br><br>
+  <input type="text" id="rraddress" name="rraddress" maxlength="50"placeholder ="Enter Your Address" required="required" /><br><br>
   <label for="rrage">Age</label><br>
-  <input type="text" id="fpassword" name="rrage" placeholder ="Enter your Age"><br><br>
+  <input type="text" id="rrage" name="rrage" maxlength="2" placeholder ="Enter Your Age" required="required" /><br><br>
   <label for="rccnumber ">Contact Number:</label><br>
-  <input type="text" id="rccnumber" name="rccnumber" placeholder ="Enter your Contact Number"><br><br>
-
+  <input type="text" id="rccnumber" name="rccnumber" maxlength="11"  placeholder ="Enter Your Contact Number" required="required" /><br><br>
   <label for="rruname">Username:</label><br>
- <input type="text" id="rruname" name="rruname" placeholder ="Enter your Username"><br><br>
+  <input type="text" id="rruname" name="rruname" maxlength="30" placeholder ="Enter Your Username" required="required" /><br><br>
   <label for="rrpass">Password:</label><br>
-  <input type="text" id="rrpass" name="rrpass" placeholder ="Enter your Password"><br><br>
- <input type="submit" id="rregister" name="rregister"style="font-size: 16px;" value="Register">
+  <input type="text" id="rrpass" name="rrpass" maxlength="15" placeholder ="Enter Your Password" required="required" /><br><br>
+  
+ <input type="submit" id="bAdd" name="bAdd"style="font-size: 16px;" value="Register">
+ <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
 </form>
 </body>

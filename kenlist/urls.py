@@ -25,6 +25,29 @@ urlpatterns = [
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 '''
 
 
@@ -52,6 +75,7 @@ urlpatterns = [
     url(r'^admin_log/$', views.admin_log, name='admin_log'),
     #url(r'^location$', views.view_location, name='view_location'),
     #url(r'^add_location$', views.add_location, name='add_location'),
+    
     url(r'^register$', views.register, name='register'),
     url(r'^(\d+)/next/bookview$', views.bookview, name='bookview'),
     url(r'^(\d+)/bookstatus$', views.bookstatus, name='bookstatus'),

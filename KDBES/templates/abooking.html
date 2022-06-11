@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Event Reservation</title>
-<body style="background-image:url('https://images.unsplash.com/photo-1490093158370-1a6be674437b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1014&q=80');
+    <title>Event Information</title>
+<body style="background-image:url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1pbmltYWxpc3QlMjBvZmZpY2V8ZW58MHx8MHx8&w=1000&q=80');
 background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
 </body>
 <br>
@@ -27,7 +27,7 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <center>
 
 
-<h1>BARANGAY EVENT SCHEDULE</h1>
+<h1>Event Information</h1>
 
 </center>
 
@@ -46,9 +46,9 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
       </select>
   <!--<input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">-->
   <label for="bbcategory">Event:</label><br>
-  <input type="text" id="bbcategory" name="bbcategory" maxlength="40" placeholder ="Enter Event">
+  <input type="text" id="bbcategory" name="bbcategory" maxlength="40" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
-  <input type="date" id="bbdate" name="bbdate" placeholder ="">
+  <input type="date" id="bbdate" name="bbdate" placeholder ="" required="required" />
   <label for="bbbstime">Start Time:</label><br>
   <input id="bbbstime" type="time" name="bbbstime"
              min="3:00" max="24:00" required>
@@ -58,11 +58,11 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
              min="3:00" max="24:00" required>
 <br><br>
   <label for="bbpeople">Estimated Number of Attendies:</label><br>
-  <input type="text" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="">
+  <input type="text" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="" required="required" />
   <label for="bbhours">Number of Hours:</label><br>
-  <input type="text2" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" >
+  <input type="text2" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" required="required" />
  
-  <input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>
+  <!--<input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>-->
   <label for r="bbrates">Rates:</label><br>
   <input type="text2" id="bbrates" name="bbrates" placeholder="Amount" readonly ><br><br>
 

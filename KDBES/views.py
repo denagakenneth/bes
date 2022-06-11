@@ -4,7 +4,7 @@ from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
 
 def home_page(request): 
      rinfos = Rinfo.objects.all()
-     return render(request, 'a.html',{'rinfos' : rinfos})
+     return render(request, 'regpage.html',{'rinfos' : rinfos})
 
 def add_item(request):     
    newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],
@@ -14,7 +14,7 @@ def add_item(request):
 
 def view_list(request, rinfo_id):    
    rinfo_ = Rinfo.objects.get(id=rinfo_id)
-   return render(request, 'b.html', {'rinfo': rinfo_})
+   return render(request, 'eventpage.html', {'rinfo': rinfo_})
 
   
 def add_info(request, rinfo_id):    
@@ -24,10 +24,27 @@ def add_info(request, rinfo_id):
    return redirect(f'/{rinfo_.id}/')    
   
 
+def register(request):
+    rinfos = Rinfo.objects.all()
+    return render(request, 'register.html', {'rinfos':rinfos})
 
 
 
-   '''
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
 
 
 from django.shortcuts import render, redirect

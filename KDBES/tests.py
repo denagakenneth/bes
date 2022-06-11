@@ -17,7 +17,7 @@ class MyMainPage(TestCase):
    def test_correct_view(self):
        request = HttpRequest()
        response = home_page(request)
-       expected_html = render_to_string('a.html')
+       expected_html = render_to_string('regpage.html')
 
    
    def test_saves_necessary(self): 
@@ -29,7 +29,7 @@ class ListViewTest(TestCase):
    def test_uses_SInfotemplate(self):
        rinfo_ = Rinfo.objects.create()        
        response = self.client.get(f'/{rinfo_.id}/')
-       self.assertTemplateUsed(response, 'b.html')
+       self.assertTemplateUsed(response, 'eventpage.html')
       
    def test_display_list_item(self):
        correct_rinfo = Rinfo.objects.create()
