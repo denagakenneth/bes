@@ -36,9 +36,9 @@ class BSMSTest(LiveServerTestCase):
         self.assertIn('REGISTER YOUR INFORMATION', header_text)  
          
         
-        inputlname = self.browser.find_element_by_id('lastname')
-        inputfname = self.browser.find_element_by_id('firstname')
-        inputmname = self.browser.find_element_by_id('middlename')
+        inputlname = self.browser.find_element_by_id('rrlname')
+        inputfname = self.browser.find_element_by_id('rrfname')
+        inputmname = self.browser.find_element_by_id('rrmname')
         inputrradd = self.browser.find_element_by_id('rraddress')
         inputrrrage = self.browser.find_element_by_id('rrage')
         inputrcnum = self.browser.find_element_by_id('rccnumber')
@@ -53,6 +53,9 @@ class BSMSTest(LiveServerTestCase):
         self.assertEqual(inputrcnum.get_attribute('placeholder'),'Enter Your Contact Number')
         self.assertEqual(inputrrruname.get_attribute('placeholder'),'Enter Your Username')
         self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')
+
+
+        
         '''
         time.sleep(1)
         inputlname =  self.browser.find_element_by_id('lastname')

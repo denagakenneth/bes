@@ -1,52 +1,3 @@
-#from django.http import HttpResponse    
-from django.shortcuts import redirect, render
-from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
-
-def home_page(request): 
-     rinfos = Rinfo.objects.all()
-     return render(request, 'regpage.html',{'rinfos' : rinfos})
-
-def add_item(request):     
-   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],
-    raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],
-    rpass=request.POST['rrpass'])
-   return redirect(f'/{newrinfo_.id}/') 
-
-def view_list(request, rinfo_id):    
-   rinfo_ = Rinfo.objects.get(id=rinfo_id)
-   return render(request, 'eventpage.html', {'rinfo': rinfo_})
-
-  
-def add_info(request, rinfo_id):    
-   rinfo_ = Rinfo.objects.get(id=rinfo_id)    
-   Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],
-    bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bpeople=request.POST['bbpeople'],bhours=request.POST['bbhours'],rinfo=rinfo_)
-   return redirect(f'/{rinfo_.id}/')    
-  
-
-def register(request):
-    rinfos = Rinfo.objects.all()
-    return render(request, 'register.html', {'rinfos':rinfos})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-'''
-
-
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
@@ -93,7 +44,7 @@ def Login(request):
 
 
 def new_list(request):
-    srinfo = Rinfo.objects.create(rlname=request.POST['rrlname'],rfname=request.POST['rrfname'],rmname=request.POST['rrmname'],raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],rpass=request.POST['rrpass'])
+    srinfo = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],rpass=request.POST['rrpass'])
     return redirect(f'{srinfo.id}/next')
 
 
@@ -104,32 +55,32 @@ def view_list(request, rinfo_id):
 
 def add_item(request, rinfo_id):
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bhours=request.POST['bbhours'],bpeople=request.POST['bbpeople'],brates=request.POST['bbrates'],bstat=request.POST['bbstat'],rinfo=rinfo_)
+    Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bhours=request.POST['bbhours'],bpeople=request.POST['bbpeople'],brates=request.POST['bbrates'],rinfo=rinfo_)
     return redirect(f'/{rinfo_.id}/next')
 
 
-def info(request):
-    return render(request, 'info.html')
-def next2(request):
-    return render(request, '5model .html')
 
-def bookstatus(request, rinfo_id):
-    #locations = Location.objects.all()
-    rinfo_ = Rinfo.objects.get(id= rinfo_id)
-    return render(request, 'bookstatus.html', {'rinfo':rinfo_})
-def statusupdate(request, rinfo_id):
-    rinfo = Bevent.objects.get(id=rinfo_id)
-    rinfo.bstatus= request.POST['bbstatus']
-    rinfo.save()
-    return redirect(f'/{rinfo.id}/bookstatus')
 def register(request):
     rinfos = Rinfo.objects.all()
     return render(request, 'register.html', {'rinfos':rinfos})
 
-def bookview(request, rinfo_id):
+def eventview(request, rinfo_id):
     #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    return render(request, 'bookview.html', {'rinfo':rinfo_})
+    return render(request, 'eventview.html', {'rinfo':rinfo_})
+
+
+#for Admin Views
+def eventstatus(request, rinfo_id):
+    #locations = Location.objects.all()
+    rinfo_ = Rinfo.objects.get(id= rinfo_id)
+    return render(request, 'eventstatus.html', {'rinfo':rinfo_})
+
+def statusupdate(request, rinfo_id):
+    rinfo = Bevent.objects.get(id=rinfo_id)
+    rinfo.bstatus= request.POST['bbstatus']
+    rinfo.save()
+    return redirect(f'/{rinfo.id}/eventstatus')
 
 
 def aaccount(request):
@@ -142,12 +93,17 @@ def zad(request):
     else:
         return render(request, 'admin.html')
 
-
-
-
 def adminbook(request):
     rinfos = Rinfo.objects.all()
     return render(request, 'adminbooklist.html', {'rinfos':rinfos})
+
+def about(request):
+    
+    return render(request, 'about.html')
+
+def contact(request):
+    
+    return render(request, 'contact.html')
 
 
 #def add_location(request, id):
@@ -199,6 +155,57 @@ def index(request):
     else:
         return render(request, 'index.html')
 '''
+
+#from django.http import HttpResponse    
+from django.shortcuts import redirect, render
+from KDBES.models import  Rinfo,Bevent,Zlocation,Zremarks,Areg
+
+def home_page(request): 
+     rinfos = Rinfo.objects.all()
+     return render(request, 'regpage.html',{'rinfos' : rinfos})
+
+def add_item(request):     
+   newrinfo_ = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],
+    raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],
+    rpass=request.POST['rrpass'])
+   return redirect(f'/{newrinfo_.id}/') 
+
+def view_list(request, rinfo_id):    
+   rinfo_ = Rinfo.objects.get(id=rinfo_id)
+   return render(request, 'eventpage.html', {'rinfo': rinfo_})
+
+  
+def add_info(request, rinfo_id):    
+   rinfo_ = Rinfo.objects.get(id=rinfo_id)    
+   Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],
+    bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bpeople=request.POST['bbpeople'],bhours=request.POST['bbhours'],rinfo=rinfo_)
+   return redirect(f'/{rinfo_.id}/')    
+  
+
+def register(request):
+    rinfos = Rinfo.objects.all()
+    return render(request, 'register.html', {'rinfos':rinfos})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+'''
+
+
+
 
 
 

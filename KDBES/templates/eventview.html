@@ -1,66 +1,79 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <title>BARANGAY EVENT SCHEDULE</title>
+<body style="background-image:url('https://images.unsplash.com/photo-1515378791036-0648a3ef77b2?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80');
+background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
+</body>
+<br>
+<br>
+<br>
 <header>
-    <h2><a href="/info"><i class="ion-plane"></i> BES</a></h2>
+    <h2><a href="/info"><i class="ion-plane"></i>BES</a></h2>
     <nav>
       <ul>
 
-
-
-        <li>
+ 	<li>
           <a href="/" title="Logout">Logout</a>
         </li>
-
       </ul>
     </nav>
   </header>
-<head>
 
 
-<br>
-<br>
 
-<body style="background-image:url('https://images.unsplash.com/photo-1490093158370-1a6be674437b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1014&q=80');
-background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
-
-
+<body>
 <center>
-<h4>Login</h4>
+<h1>BARANGAY EVENT SCHEDULE</h1>
 </center>
 <div>
+    <h3>NAME: {{ rinfo.rlname.upper }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </h3>
+
+<form method="POST" action="/{{rinfo.id}}/next">
+
+
+
 <table id="kenTable" name='tr'>
     <tr>
-    <th>Name</th>
-    <th>Age</th>
-    <th>Contact Number</th>
-    <th>Email Address</th>
-    <th>Action</th>
-
+    <th>Location</th>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Start Time</th>
+    <th>End Time</th>
+    <th>People</th>
+    <th>Hours</th>
+    <th>Rates</th>
+    <th>Status</th>
     </tr>
 
-
        <tr>
-         {% for resident in residents %}
+        {% for bevent in rinfo.bevent_set.all %}
          <! -- {{ forloop.counter }}:  -->
+        
+        <td>{{ bevent.blocation }}</td>
+        <td>{{ bevent.bcategory}}</td>
+        <td>{{ bevent.bdate}}</td>
+        <td>{{ bevent.bstime}}</td>
+        <td>{{ bevent.betime}}</td>
+        <td>{{ bevent.bpeople}}</td>
+        <td>{{ bevent.bhours}}</td>
+        <td>{{ bevent.brates}}</td>
+        <td>{{ bevent.bstat}}</td>
 
-        <td>{{ resident.vname }}</td>
-        <td>{{ resident.vage}}</td>
-        <td>{{ resident.vcnumber}}</td>
-        <td>{{ resident.vemail}}</td>
-        <td><b><a href="/{{resident.id}}/bookstatus">View Details</a></b></td>
 
           </tr>
         {% endfor %}
     </table>
+</tr>
 
+
+
+{% csrf_token %}
 </div>
+</form>
+
 </body>
-
-
 <style>
-
-
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
 *, *:before, *:after {
@@ -70,15 +83,15 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 }
 
 ::-webkit-input-placeholder {
-  color: #56585b;
+  color: #black;
 }
 
 ::-moz-placeholder {
-  color: #56585b;
+  color: #black;
 }
 
 :-moz-placeholder {
-  color: #56585b;
+  color: #black;
 }
 
 html {
@@ -90,7 +103,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  color: #0a0a0b;
+  color: #black;
 }
 
 ul, nav{
@@ -162,7 +175,7 @@ a.btn {
 a.btn:hover {
   background: #d73851;
   border: 1px solid #d73851;
-  color: #fff;
+  color: #BLUE;
 }
 
 .cover  {
@@ -326,7 +339,7 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-  background-color: #008B8B;
+  background-color: #BLUE;
 
 
 }
@@ -340,32 +353,15 @@ div {
 h1 {
   font-family: Lucida Handwriting, serif;
   font-size: 60px;
-}
 
-h1 {
-  font-family: Lucida Handwriting, serif;
-  font-size: 30px;
-  color:white;
 }
 label {
   font-family: Lucida Handwriting, serif;
   font-size: 30px;
 }
-
-p{
- font-family: Lucida Handwriting, serif;
-
-  color: #000018;
-  font-size: 25px;
-  padding: 14px 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  width:100%
-}
-
 a {
-  color: blue;
+  color: aqua;
+      text-shadow: .5px 1px black;
 }
 
 a:hover {
@@ -389,9 +385,15 @@ th {
    font-family: Lucida Handwriting, serif;
   font-size: 20px;
 }
+  h3 {
+  font-family: Lucida Handwriting, serif;
+  font-size: 30px;
+  text-shadow: .5px 1px black;
+  color:white;
+}
+
 </style>
 
 </html>
-
 
 

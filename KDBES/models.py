@@ -24,7 +24,7 @@ class Bevent(models.Model):
     bstat  = models.TextField(default='')
     rinfo = models.ForeignKey(Rinfo, default="", on_delete = models.CASCADE)
 
-#This model is for Admin view to set available court 
+#This model is for Admin view to set the location of a court to be available 
 class Zlocation(models.Model):
     llocation = models.TextField(default='')
     laddress = models.TextField(default='')

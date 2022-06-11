@@ -29,7 +29,8 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <h1>BARANGAY EVENT SCHEDULE</h1>
 </center>
 <div>
-<form method="POST" action="/{{rinfo.id}}/bookstatus/statusupdate">
+  <h3>NAME: {{ rinfo.rlname.upper }},  {{ rinfo.rfname.upper }} {{ rinfo.rmname.upper }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </h3>
+<form method="POST" action="/{{rinfo.id}}/eventstatus/statusupdate">
 
 
 
@@ -61,7 +62,8 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
         <td>{{ bevent.bhours}}</td>
         <td>{{ bevent.brates}}</td>
 
-       <td><select id="bbstatus" name="bbstatus" onchange="cclass();">
+
+       <td><select id="bbstatus" name="bbstatus" onchange="class();">
 		        <option value="">Select Status</option>
   			<option value="Approved">Approved</option>
   			<option value="Disapproved">Disapproved</option>
