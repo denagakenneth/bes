@@ -183,11 +183,11 @@ def edit(request, id):
 
 def update(request, id):
     rinfo = Rinfo.objects.get(id=id)
-    rinfo.runame = request.POST['vruname']
-    rinfo.vage = request.POST['vvage']
-    rinfo.vcnumber = request.POST['vvcnumber']
-    rinfo.runame = request.POST['vruname']
-    rinfo.rpass = request.POST['vrpass']
+    rinfo.rlname = request.POST['rrlname']
+    rinfo.rage = request.POST['rrage']
+    rinfo.rcnumber = request.POST['rrcnumber']
+    rinfo.rruname = request.POST['rruname']
+    rinfo.rrpass = request.POST['rrpass']
     rinfo.save()
     return redirect('/')
 def delete(request, id):

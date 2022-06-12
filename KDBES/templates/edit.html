@@ -34,7 +34,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  background: url('https://media.istockphoto.com/photos/elearning-education-concept-learning-online-picture-id1290864946?b=1&k=20&m=1290864946&s=170667a&w=0&h=zZq7rG5McSptSIpEm9f8iTGd3Mrdkcslakr91T7qTYM=') no-repeat center center fixed;
+  background: url('https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center fixed;
   background-size: cover;
   color: #0a0a0b;
 }
@@ -45,7 +45,7 @@ ul, nav{
 }
 
 a {
-  color: #fff;
+  color: #79289C;
   text-decoration: none;
   cursor: pointer;
   opacity: 0.9;
@@ -54,6 +54,19 @@ a {
 a:hover {
   opacity: 1;
 }
+
+input[type=text], center {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 3px solid #28759C;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
 
 h1 {
   font-size: 3rem;
@@ -64,7 +77,7 @@ h1 {
 h4 {
   font-size: 3rem;
   font-weight: 400;
-  color: #fff;
+  color: #7B50AB;
   margin:2rem;
 }
 i {
@@ -80,7 +93,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #fff;
+  color: #27808C;
   padding: 5px 50px 0;
 }
 
@@ -220,6 +233,8 @@ a.btn:hover {
     flex-direction: column;
   }
 
+
+
 }
 </style> 
 
@@ -236,10 +251,10 @@ a.btn:hover {
     <nav>
       <ul>
         <li>
-          <a href="/ABOUT" title="About">About</a>
+          <a href="/about" title="About">About</a>
         </li>
         <li>
-          <a href="#" title="Contact Us">Contact Us</a>
+          <a href="/contact" title="Contact Us">Contact Us</a>
         </li>
          
       </ul>
@@ -248,48 +263,44 @@ a.btn:hover {
 
 </div>
 <br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 <center>
 
 <h4>UPDATE YOUR INFORMATION</h4>
-<form method="POST" action="update/{{ visitors.id }}">
-  <label for="vvname">FullName:</label><br>
-  <input type="text" id="vvname" name="vvname" value="{{ residents.vname }}" placeholder ="Enter your name"><br><br>
-  <label for="vvage">Age</label><br>
-  <input type="vvage" id="fpassword" name="vvage" value="{{ residents.vage }}" placeholder ="Enter your Age"><br><br>
+<form method="POST" action="update/{{ Rinfo.id }}">
+  <label for="rrlname">Last Name:</label><br>
+  <input type="text" id="vvname" name="vvname" value="{{ Rinfo.rlname }}" placeholder ="Enter your name"><br><br>
+  <label for="rrage">Age</label><br>
+  <input type="text" id="rrage" name="rrage" value="{{ Rinfo.rage }}" placeholder ="Enter your Age"><br><br>
   <label for="vvcnumber">Contact Number:</label><br>
-  <input type="text" id="vvcnumber" name="vvcnumber" value="{{ residents.vcnumber }}" placeholder ="Enter your Contact Number"><br><br>
-  <label for="vvemail">Email Address:</label><br>
-  <input type="text" id="vvemail" name="vvemail"value="{{ residents.vemail }}" placeholder ="Enter your Email Address"><br><br>
-  <label for="vvusername">Username:</label><br>
-  <input type="text" id="vvusername" name="vvusername" value="{{ residents.vusername }}"placeholder ="Enter your Username"><br><br>
-  <label for="vvpassword">Password:</label><br>
-  <input type="text" id="vvpassword" name="vvpassword"value="{{ residents.vpassword }}" placeholder ="Enter your Password"><br><br>
-  <button type="submit">Update</button>
+  <input type="text" id="rrcnumber" name="rrcnumber" value="{{ Rinfo.rcnumber }}" placeholder ="Enter your Contact Number"><br><br>
+  <label for="rraddress">Address:</label><br>
+  <input type="text" id="rraddress" name="rraddress"value="{{ Rinfo.raddress }}" placeholder ="Enter your Email Address"><br><br>
+  <label for="rruname">Username:</label><br>
+  <input type="text" id="rruname" name="rruname" value="{{ Rinfo.runame }}"placeholder ="Enter your Username"><br><br>
+  <label for="rrpass">Password:</label><br>
+  <input type="text" id="rrpass" name="rrpass"value="{{ Rinfo.rpass }}" placeholder ="Enter your Password"><br><br>
+  <button type="submit" style="font-size: 30px;">Update</button>
   <br>
   <br>
   <br>
 
-<label for="vvname">FullName:</label>
-  <label for="bbdate">{{ booking.blocation }}</label><br>	
+<label for="vvname">Court Location:</label>
+  <label for="bbdate">{{ Bevent.blocation }}</label><br>	
 
   <label for="bbdate">Date:</label>
-  <label for="bbdate">{{ booking.bdate }}</label><br>
+  <label for="bbdate">{{ Bevent.bdate }}</label><br>
 
   <label for="bbpeople">Number of Attendies:</label>
-  <label for="bbdate">{{ booking.bpeople }}</label><br>	
+  <label for="bbdate">{{ Bevent.bpeople }}</label><br>	
   
   <label for="bbrates">Rates:</label>
-  <label for="bbdate">{{ booking.brates }}</label><br>
+  <label for="bbdate">{{ Bevent.brates }}</label><br>
   
 
 {% csrf_token %}
 </form> 
+</center>
 <br>
 <br>
 <br>

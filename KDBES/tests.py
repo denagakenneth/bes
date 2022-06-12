@@ -73,7 +73,7 @@ class InfoTest(TestCase):
       
       self.assertEqual(Bevent.objects.count(), 1)        
       new_info= Bevent.objects.first()        
-      self.assertEqual(new_info.bdate, 'New Date')       
+      self.assertEqual(new_info.bhours, 'New Hours')       
       self.assertEqual(new_info.rinfo, correct_rinfo)
       
   def test_redirects_info(self):        
