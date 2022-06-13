@@ -53,7 +53,7 @@ class BSMSTest(LiveServerTestCase):
         self.assertEqual(inputrcnum.get_attribute('placeholder'),'Enter Your Contact Number')
         self.assertEqual(inputrrruname.get_attribute('placeholder'),'Enter Your Username')
         self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')
-        
+        '''
         time.sleep(1)
         inputlname =  self.browser.find_element_by_id('lastname')
         inputlname.click()
@@ -155,6 +155,8 @@ class BSMSTest(LiveServerTestCase):
         
         bAdd = self.browser.find_element_by_id('bAdd')
         bAdd.click()
+
+        '''
         '''
         time.sleep(1)
         
