@@ -20,8 +20,8 @@ urlpatterns = [
     url(r'^aaccount$', views.aaccount, name='aaccount'),
     url(r'^home_log$', views.home_log, name='home_log'),
     url(r'^admin_log/$', views.admin_log, name='admin_log'),
-    #url(r'^location$', views.view_location, name='view_location'),
-    #url(r'^add_location$', views.add_location, name='add_location'),
+    url(r'^location$', views.view_location, name='view_location'),
+    url(r'^add_location$', views.add_location, name='add_location'),
     
     url(r'^register$', views.register, name='register'),
     url(r'^(\d+)/next/eventview$', views.eventview, name='eventview'),

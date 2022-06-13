@@ -106,25 +106,22 @@ def contact(request):
     return render(request, 'contact.html')
 
 
-#def add_location(request, id):
-  # if request.method=="POST":
-   #zlocation = Zlocation.objects.get(id=id)
-   #zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
-   #zlocation.llocation = request.POST['lllocation']
-   #zlocation.laddress = request.POST['lladdress']
-   #   name=request.POST['name']
-     #   age=request.POST['age']
-    #    address=request.POST['address']
-    #  obj=Details.objects.create(name=name,age=age,address=address)
-   #zlocation.save()
+def add_location(request, id):
+   if request.method=="POST":
+    zlocation = Zlocation.objects.get(id=id)
+    zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+    zlocation.llocation = request.POST['lllocation']
+    zlocation.laddress = request.POST['lladdress'],address=request.POST['address']
+    obj=Details.create(name=name,age=age,address=address)
+    zlocation.save()
 
-   #return redirect('/location')
+   return redirect('/location')
 
-#def view_location(request):
+def view_location(request):
 
-    #zlocations = Zlocation.objects.all()
+    zlocations = Zlocation.objects.all()
 
-    #return render(request, 'LocationReg.html', {'zlocation':zlocations})
+    return render(request, 'LocationReg.html', {'zlocation':zlocations})
 
 
 
