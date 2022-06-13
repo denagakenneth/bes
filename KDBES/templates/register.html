@@ -217,7 +217,17 @@ a.btn:hover {
 }
 
 
-
+input[type=Number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
 
 input[type=text4], select {
   width: 100%;
@@ -351,9 +361,9 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
   <label for="rraddress ">Address:</label><br>
   <input type="text" id="rraddress" name="rraddress" maxlength="50"placeholder ="Enter Your Address" required="required" /><br><br>
   <label for="rrage">Age</label><br>
-  <input type="text" id="rrage" name="rrage" maxlength="2" placeholder ="Enter Your Age" required="required" /><br><br>
+  <input type="Number" id="rrage" name="rrage" maxlength="2" placeholder ="Enter Your Age" required="required" /><br><br>
   <label for="rccnumber ">Contact Number:</label><br>
-  <input type="text" id="rccnumber" name="rccnumber" maxlength="11"  placeholder ="Enter Your Contact Number" required="required" /><br><br>
+  <input type="Number" id="rccnumber" name="rccnumber" maxlength="11"  placeholder ="Enter Your Contact Number" required="required" /><br><br>
   <label for="rruname">Username:</label><br>
   <input type="text" id="rruname" name="rruname" maxlength="30" placeholder ="Enter Your Username" required="required" /><br><br>
   <label for="rrpass">Password:</label><br>

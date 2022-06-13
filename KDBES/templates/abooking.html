@@ -58,9 +58,9 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
              min="3:00" max="24:00" required>
 <br><br>
   <label for="bbpeople">Estimated Number of Attendies:</label><br>
-  <input type="text" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="Number of Attendies" required="required" />
+  <input type="Number" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="Number of Attendies" required="required" />
   <label for="bbhours">Number of Hours:</label><br>
-  <input type="text2" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" required="required" />
+  <input type="Number" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" required="required" />
  
   <!--<input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>-->
   <label for r="bbrates">Rates:</label><br>
@@ -333,7 +333,17 @@ a.btn:hover {
 }
 
 
-
+input[type=Number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
 
 input[type=text2], select {
   width: 100%;
