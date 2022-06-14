@@ -15,12 +15,12 @@ urlpatterns = [
     url(r'^adminbook/$', views.adminbook, name='adminbook'),
     url(r'^admin_log/$', views.admin_log, name='admin_log'),
     url(r'^aaccount$', views.aaccount, name='aaccount'),
-
-    url(r'^register$', views.register, name='register'),
-    url(r'^(\d+)/next/eventview$', views.eventview, name='eventview'),
     url(r'^(\d+)/eventstatus$', views.eventstatus, name='eventstatus'),
     url(r'^(\d+)/eventstatus/statusupdate$', views.statusupdate, name='statusupdate'),
 
+    url(r'^register$', views.register, name='register'),
+    url(r'^(\d+)/next/eventview$', views.eventview, name='eventview'),
+    
     url(r'^location$', views.view_location, name='view_location'),
     url(r'^add_location$', views.add_location, name='add_location'),
     url(r'^edit/(?P<id>\d+)$', views.edit, name='edit'),

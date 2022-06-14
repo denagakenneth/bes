@@ -39,10 +39,6 @@ def Login(request):
 
 
 
-
-
-
-
 def new_list(request):
     srinfo = Rinfo.objects.create(rlname=request.POST['lastname'],rfname=request.POST['firstname'],rmname=request.POST['middlename'],raddress=request.POST['rraddress'],rage=request.POST['rrage'],rcnumber=request.POST['rccnumber'],runame=request.POST['rruname'],rpass=request.POST['rrpass'])
     return redirect(f'{srinfo.id}/next')
@@ -59,7 +55,6 @@ def add_item(request, rinfo_id):
     return redirect(f'/{rinfo_.id}/next')
 
 
-
 def register(request):
     rinfos = Rinfo.objects.all()
     return render(request, 'register.html', {'rinfos':rinfos})
@@ -71,6 +66,10 @@ def eventview(request, rinfo_id):
 
 
 #for Admin Views
+def adminbook(request):
+    rinfos = Rinfo.objects.all()
+    return render(request, 'adminbooklist.html', {'rinfos':rinfos})
+
 def eventstatus(request, rinfo_id):
     #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id= rinfo_id)
@@ -93,17 +92,7 @@ def zad(request):
     else:
         return render(request, 'admin.html')
 
-def adminbook(request):
-    rinfos = Rinfo.objects.all()
-    return render(request, 'adminbooklist.html', {'rinfos':rinfos})
 
-def about(request):
-    
-    return render(request, 'about.html')
-
-def contact(request):
-    
-    return render(request, 'contact.html')
 
 
 def add_location(request, id):
@@ -144,14 +133,25 @@ def delete(request, id):
     rinfo.delete()
     return redirect('/')
 
+
+
+
+
+
+def about(request):
+    return render(request, 'about.html')
+
+def contact(request):
+    return render(request, 'contact.html')
+
 # Create your views here.
-def index(request):
-    if request.method == 'POST':
-        member = Member(username=request.POST['username'], password=request.POST['password'],  firstname=request.POST['firstname'], lastname=request.POST['lastname'])
-        member.save()
-        return redirect('/')
-    else:
-        return render(request, 'index.html')
+#def index(request):
+    #if request.method == 'POST':
+        #member = Member(username=request.POST['username'], password=request.POST['password'],  firstname=request.POST['firstname'], lastname=request.POST['lastname'])
+        #member.save()
+        #return redirect('/')
+    #else:
+        #return render(request, 'index.html')
 '''
 
 #from django.http import HttpResponse    
