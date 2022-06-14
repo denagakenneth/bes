@@ -47,7 +47,7 @@ def new_list(request):
 def view_list(request, rinfo_id):
     #locations = Location.objects.all()
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    return render(request, 'abooking.html',{'rinfo': rinfo_})
+    return render(request, 'eventinfo.html',{'rinfo': rinfo_})
 
 def add_item(request, rinfo_id):
     rinfo_ = Rinfo.objects.get(id=rinfo_id)

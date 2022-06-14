@@ -29,7 +29,7 @@ class ListViewTest(TestCase):
    def test_uses_SInfotemplate(self):
        rinfo_ = Rinfo.objects.create()        
        response = self.client.get(f'/{rinfo_.id}/')
-       self.assertTemplateUsed(response, 'abooking.html')
+       self.assertTemplateUsed(response, 'eventinfo.html')
       
    def test_display_list_item(self):
        correct_rinfo = Rinfo.objects.create()
