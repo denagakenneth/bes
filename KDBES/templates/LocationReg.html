@@ -33,10 +33,10 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <form method="POST" action="/add_location">
 
 <label for="lllocation">Court Location:</label><br>  
-<input type="text" id="lllocation" name="lllocation" placeholder="Enter Location"><br><br>
+<input type="text" id="lllocation" name="lllocation" minlength="6" placeholder="Enter Location" required="required"><br><br>
 
 <label for="lladdress">Address:</label><br>  
-<input type="text" id="lladdress" name="lladdress" placeholder="Enter Address"><br><br>
+<input type="text" id="lladdress" name="lladdress" minlength="6" placeholder="Enter Address" required="required"><br><br>
 
 
   <input type="submit" id="ladd" name="ladd" style="font-size: 16px;" value="Add Location"><br>
