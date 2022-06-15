@@ -94,25 +94,26 @@ def zad(request):
 
 
 
-
+#for adding Location
 def add_location(request, id):
-   if request.method=="POST":
+   if request.method == "POST":
     zlocation = Zlocation.objects.get(id=id)
     zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
     zlocation.llocation = request.POST['lllocation']
     zlocation.laddress = request.POST['lladdress'],address=request.POST['address']
-    obj=Details.create(name=name,age=age,address=address)
+    Zlocation = objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
     zlocation.save()
 
-   return redirect('/location')
+   return redirect(f'/location')
 
 def view_location(request):
-
     zlocations = Zlocation.objects.all()
-
     return render(request, 'LocationReg.html', {'zlocation':zlocations})
 
-
+def view_list(request, rinfo_id):
+    #locations = Location.objects.all()
+    rinfo_ = Rinfo.objects.get(id=rinfo_id)
+    return render(request, 'eventinfo.html',{'rinfo': rinfo_})
 
 def edit(request, id):
     rinfos = Rinfo.objects.get(id=id)

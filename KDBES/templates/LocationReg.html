@@ -7,7 +7,7 @@
       <ul>
 
         <li>
-         <a href="/adminbook" title="Logout">| < Back</a>
+         <a href="/adminbook" title="Logout">| Back</a>
         </li>
 
         <li>
@@ -63,7 +63,9 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
         
         <td>{{ zlocation.llocation }}</td>
         <td>{{ zlocation.laddress}}</td>
-        <td><a href="edit/{{zlocation.id}}">EDIT</a><a href="delete/{{zlocation.id}}"> DELETE</a></td>
+        <td><a href="edit/{{zlocation.id}}">EDIT</a>
+          <br>
+          <a href="delete/{{zlocation.id}}"> DELETE</a></td>
       
     
           </tr>
