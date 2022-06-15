@@ -2,7 +2,369 @@
 <html>
 <head>
     <title>Schedule</title>
+<style>
+@import url('https://fonts.googleapis.com/css?family=Lato:400,700');
 
+*, *:before, *:after {
+  -webkit-box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  box-sizing: inherit;
+}
+
+::-webkit-input-placeholder {
+  color: #black;
+}
+
+::-moz-placeholder {
+  color: #black;
+}
+
+:-moz-placeholder {
+  color: #black;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  margin: 0;
+  color: #black;
+}
+
+ul, nav{
+  list-style: none;
+  padding: 0;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+h4 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: black;
+  margin:2rem;
+  font-family: Lucida Handwriting, serif;
+}
+i {
+  font-size: 1rem;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  padding: 5px 50px 0;
+  font-family: Lucida Handwriting, serif;
+}
+
+header nav ul {
+  display: flex;
+}
+
+header nav li{
+  margin: 0 15px;
+}
+
+header nav li:first-child{
+  margin-left: 0;
+}
+
+header nav li:last-child{
+  margin-right: 0;
+}
+
+a.btn {
+  color: #fff;
+  padding: 10px;
+  border: 1px solid rgba(255,255,255,0.5);
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+a.btn:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+  color: #BLUE;
+}
+
+.cover  {
+  height: 100vh;
+  width: 100%;
+  background: -webkit-gradient(linear, left top, left bottom, from(rgba(0,0,0,0.05)), to(rgba(0,0,0,0)));
+  background: -webkit-linear-gradient(top, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  background: linear-gradient(to bottom, rgba(0,0,0,0.05) 0%, rgba(0,0,0,0) 100%);
+  padding: 20px 50px;
+  display: -webkit-box;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  flex-direction: column;
+  -webkit-box-pack: center;
+  justify-content: center;
+  -webkit-box-align: center;
+  align-items: center;
+}
+
+.flex-form input[type="submit"] {
+  background: #ef3f5a;
+  border: 1px solid #ef3f5a;
+  color: #fff;
+  padding: 0 30px;
+  cursor: pointer;
+  -webkit-transition: all 0.2s;
+  -moz-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.flex-form input[type="submit"]:hover {
+  background: #d73851;
+  border: 1px solid #d73851;
+}
+
+.flex-form {
+  display: -webkit-box;
+  display: flex;
+  z-index: 10;
+  position: relative;
+  width: 500px;
+  box-shadow: 4px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+.flex-form > * {
+  border: 0;
+  padding: 0 0 0 10px;
+  background: #fff;
+  line-height: 50px;
+  font-size: 1rem;
+  border-radius: 0;
+  outline: 0;
+  -webkit-appearance: none;
+}
+
+
+@media all and (max-width:800px) {
+  body {
+    font-size: 0.9rem;
+  }
+
+  .flex-form {
+    width: 100%;
+  }
+
+  .flex-form > * {
+    font-size: 0.9rem;
+  }
+
+  header {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+    padding: 10px !important;
+  }
+
+  header h2 {
+    margin-bottom: 15px;
+  }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  .cover {
+    padding: 20px;
+  }
+
+  #madeby {
+    padding: 30px 20px;
+  }
+}
+
+@media all and (max-width:360px) {
+  header nav li{
+    margin: 0 10px;
+  }
+
+  .flex-form {
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    flex-direction: column;
+  }
+
+}
+
+
+input[type=Number], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=text2], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+input[type=time], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #FF0000;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=text], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=date] {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+
+input[type=submit] {
+  width: 100%;
+  background-color:#008d96;
+  color: ghostwhite;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+input[type=submit]:hover {
+  background-color: #008B8B;
+
+
+}
+
+input[type=reset] {
+  width: 100%;
+  background-color:#008d96;
+  color: red;
+  padding: 14px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: Lucida Handwriting, serif;
+  font-size: 7px;
+
+}
+
+
+table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #008B8B;
+  color: black;
+
+   font-family: Lucida Handwriting, serif;
+  font-size: 20px;
+}
+
+input[type=reset]:hover {
+  background-color: #008B8B;
+}
+
+div {
+  border-radius: 5px;
+  background-color: rgba(1, 91, 97, 0.4);
+  padding: 20px;
+}
+
+h1 {
+  font-family: Lucida Handwriting, serif;
+  font-size: 60px;
+
+}
+h3 {
+  font-family: Lucida Handwriting, serif;
+  font-size: 30px;
+  text-shadow: .5px 1px white;
+  color:black;
+}
+label {
+  font-family: Lucida Handwriting, serif;
+  font-size: 30px;
+}
+a {
+  color: aqua;
+      text-shadow: .5px 1px black;
+}
+
+a:hover {
+  color: green;
+}
+
+
+
+
+</style>
 
 <style>
 @import url('https://fonts.googleapis.com/css?family=Lato:400,700');
@@ -34,7 +396,7 @@ html {
 body {
   font-family: 'Lato', sans-serif;
   margin: 0;
-  background: url('https://images.unsplash.com/photo-1511389026070-a14ae610a1be?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80') no-repeat center center fixed;
+  background: url('https://media.istockphoto.com/photos/stadium-night-in-a-soccer-stadium-picture-id464558990?k=20&m=464558990&s=612x612&w=0&h=jehBsLcamRM7wHP79HHz3T0ZG2D9OCU6GfQP4Yqkft8=') no-repeat center center fixed;
   background-size: cover;
   color: #0a0a0b;
 }
@@ -45,7 +407,7 @@ ul, nav{
 }
 
 a {
-  color: #79289C;
+  color: #fff;
   text-decoration: none;
   cursor: pointer;
   opacity: 0.9;
@@ -55,34 +417,47 @@ a:hover {
   opacity: 1;
 }
 
-input[type=text], center {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 3px solid #28759C;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: Copperplate, serif;
-  font-size: 20px;
-}
 
 
 h1 {
   font-size: 3rem;
   font-weight: 400;
-  color: #fff;
+  color: red;
   margin:2rem;
+
 }
+
+
+
+h3 {
+  font-size: 2rem;
+  font-weight: 400;
+  color: darkblue;
+  margin:2rem;
+
+}
+
+
 h4 {
   font-size: 3rem;
   font-weight: 400;
-  color: #7B50AB;
+  color: #fff;
   margin:2rem;
 }
+
+h5 {
+  font-size: 3rem;
+  font-weight: 400;
+  color: ghostwhite;
+  margin:2rem;
+
+}
+
 i {
   font-size: 1rem;
 }
+
+
 
 header {
   position: absolute;
@@ -93,7 +468,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  color: #27808C;
+  color: #fff;
   padding: 5px 50px 0;
 }
 
@@ -221,6 +596,30 @@ a.btn:hover {
 }
 
 @media all and (max-width:360px) {
+  table, td, th {
+  border: 1px solid black;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+tr:nth-child(even){background-color: #f2f2f2}
+
+th {
+  background-color: #008B8B;
+  color: black;
+
+   font-family: Lucida Handwriting, serif;
+  font-size: 20px;
+}
+
+div {
+  border-radius: 5px;
+  background-color: rgba(1, 91, 97, 0.4);
+  padding: 20px;
+}
+
   header nav li{
     margin: 0 10px;
   }
@@ -232,8 +631,6 @@ a.btn:hover {
     -webkit-box-direction: normal;
     flex-direction: column;
   }
-
-
 
 }
 </style> 
@@ -247,68 +644,71 @@ a.btn:hover {
 <div class="container">
 
   <header>
-    <h2><a href="/"><i class="ion-plane"></i> Home</a></h2>
+    <h2>BARANGAY EVENT SCHEDULE</h2>
     <nav>
       <ul>
+
+        <li>
+          <a href="/" title="Home">| Home</a>
+        </li>
+
         <li>
           <a href="/about" title="About">| About</a>
         </li>
+
         <li>
-          <a href="/contact" title="Contact Us">| Contact Us</a>
+          <a href="/about" title="About">| Contact Us</a>
         </li>
+        
+        
          
       </ul>
     </nav>
   </header>
 
 </div>
-<br>
-
 <center>
 
-<h4>Announcement</h4>
-<h3>Today's Schedule</h3>
-<label for="vvname">Court Location:</label>
-  <label for="bbdate">{{ Bevent.blocation }}</label><br> 
 
-<label for="vvname">Events:</label>
-  <label for="bbdate">{{ Bevent.bcategory }}</label><br>   
+<div class="content">
+  <h1>Announcement</h1>
+  <h3>Our Event's Schedule</h3>
+   
 
-<label for="bbdate">Date:</label>
-  <label for="bbdate">{{ Bevent.bdate }}</label><br>
+<table id="kenTable" name='tr'>
+    <tr>
+    <th>Location</th>
+    <th>Event</th>
+    <th>Date</th>
+    <th>Time</th>
+    </tr>
 
-<label for="bbdate">Start Time:</label>
-  <label for="bbdate">{{ Bevent.bstime }}</label><br>
+       <tr>
+        {% for Zremarks in rinfo.bevent_set.all %}
+         <! -- {{ forloop.counter }}:  -->
 
-<h4>All the approved event's will display here</h4>
-<!--<form method="POST" action="update/{{ Rinfo.id }}">
-  <label for="rrlname">Last Name:</label><br>
-  <input type="text" id="vvname" name="vvname" value="{{ Rinfo.rlname }}" placeholder ="Enter your name"><br><br>
-  <label for="rrage">Age</label><br>
-  <input type="text" id="rrage" name="rrage" value="{{ Rinfo.rage }}" placeholder ="Enter your Age"><br><br>
-  <label for="vvcnumber">Contact Number:</label><br>
-  <input type="text" id="rrcnumber" name="rrcnumber" value="{{ Rinfo.rcnumber }}" placeholder ="Enter your Contact Number"><br><br>
-  <label for="rraddress">Address:</label><br>
-  <input type="text" id="rraddress" name="rraddress"value="{{ Rinfo.raddress }}" placeholder ="Enter your Email Address"><br><br>
-  <label for="rruname">Username:</label><br>
-  <input type="text" id="rruname" name="rruname" value="{{ Rinfo.runame }}"placeholder ="Enter your Username"><br><br>
-  <label for="rrpass">Password:</label><br>
-  <input type="text" id="rrpass" name="rrpass"value="{{ Rinfo.rpass }}" placeholder ="Enter your Password"><br><br>
-  <button type="submit" style="font-size: 30px;">Update</button>-->
-  <br>
-  <br>
-  <br>
+        <td>{{ Zremarks.blocation }}</td>
+        <td>{{ Zremarks.bcategory}}</td>
+        <td>{{ Zremarks.bdate}}</td>
+        <td>{{ Zremarks.bstime}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</tr>
 
+</div>
+    
+            <h5><p></p>All the approved event's will display here
+            </p></h5>
+           
+            
+</div>
 
-  
-
-{% csrf_token %}
-</form> 
-</center>
 <br>
-<br>
-<br>
-<br>
+
+
 </body>
 </html>
+
+
 
