@@ -144,6 +144,9 @@ def about(request):
 def contact(request):
     return render(request, 'contact.html')
 
+def Schedule(request):
+    return render(request, 'Schedule.html')
+
 # Create your views here.
 #def index(request):
     #if request.method == 'POST':
