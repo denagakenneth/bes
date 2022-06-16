@@ -97,7 +97,9 @@ def zad(request):
 #This is for adding Location in eventinfo
 def add_location(request, id):
    if request.method == "POST":
-    zlocation = Zlocation.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+    zlocation = Zlocation.objects.get(id=id)
+    zlocations.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+    zlocations.save()
     
    return redirect('/location')
 

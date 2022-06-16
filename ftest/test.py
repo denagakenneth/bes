@@ -32,10 +32,10 @@ class BSMSTest(LiveServerTestCase):
         #self.browser.get(self.live_server_url)
         self.browser.get('http://localhost:8000')
         self.assertIn('BARANGAY EVENT SCHEDULE', self.browser.title)
-        header_text = self.browser.find_element_by_tag_name('h1').text
-        self.assertIn('REGISTER YOUR INFORMATION', header_text)  
+        header_text = self.browser.find_element_by_tag_name('h4').text
+        self.assertIn('BARANGAY EVENT SCHEDULE', header_text)  
          
-        
+        '''
         inputlname = self.browser.find_element_by_id('lastname')
         inputfname = self.browser.find_element_by_id('firstname')
         inputmname = self.browser.find_element_by_id('middlename')
@@ -52,7 +52,7 @@ class BSMSTest(LiveServerTestCase):
         self.assertEqual(inputrrrage.get_attribute('placeholder'),'Enter Your Age')
         self.assertEqual(inputrcnum.get_attribute('placeholder'),'Enter Your Contact Number')
         self.assertEqual(inputrrruname.get_attribute('placeholder'),'Enter Your Username')
-        self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')
+        self.assertEqual(inputrrrpass.get_attribute('placeholder'),'Enter Your Password')'''
         '''
         time.sleep(1)
         inputlname =  self.browser.find_element_by_id('lastname')
