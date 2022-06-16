@@ -14,7 +14,7 @@ class Rinfo(models.Model):
 #for the Event Details
 class Bevent(models.Model):
     blocation = models.TextField(default='')
-    bcategory = models.TextField(default='')
+    bmainevent = models.TextField(default='')
     bdate = models.TextField(default='')
     bbstime = models.TextField(default='')
     bbetime = models.TextField(default='')

@@ -51,7 +51,7 @@ def view_list(request, rinfo_id):
 
 def add_item(request, rinfo_id):
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    Bevent.objects.create(blocation=request.POST['bblocation'],bcategory=request.POST['bbcategory'],bdate=request.POST['bbdate'],bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bhours=request.POST['bbhours'],bpeople=request.POST['bbpeople'],brates=request.POST['bbrates'],rinfo=rinfo_)
+    Bevent.objects.create(blocation=request.POST['bblocation'],bmainevent=request.POST['bbmainevent'],bdate=request.POST['bbdate'],bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bhours=request.POST['bbhours'],bpeople=request.POST['bbpeople'],brates=request.POST['bbrates'],rinfo=rinfo_)
     return redirect(f'/{rinfo_.id}/next')
 
 
@@ -94,26 +94,19 @@ def zad(request):
 
 
 
-#for adding Location
+#This is for adding Location in eventinfo
 def add_location(request, id):
    if request.method == "POST":
-    zlocation = Zlocation.objects.get(id=id)
-    zlocation = Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
-    zlocation.llocation = request.POST['lllocation']
-    zlocation.laddress = request.POST['lladdress'],address=request.POST['address']
-    Zlocation = objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
-    zlocation.save()
+    zlocation = Zlocation.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+    
+   return redirect('/location')
 
-   return redirect(f'/location')
+
 
 def view_location(request):
     zlocations = Zlocation.objects.all()
     return render(request, 'LocationReg.html', {'zlocation':zlocations})
 
-def view_list(request, rinfo_id):
-    #locations = Location.objects.all()
-    rinfo_ = Rinfo.objects.get(id=rinfo_id)
-    return render(request, 'eventinfo.html',{'rinfo': rinfo_})
 
 def edit(request, id):
     rinfos = Rinfo.objects.get(id=id)

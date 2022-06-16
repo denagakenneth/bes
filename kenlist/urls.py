@@ -23,7 +23,7 @@ urlpatterns = [
     url(r'^(\d+)/next/eventview$', views.eventview, name='eventview'),
     
     url(r'^location$', views.view_location, name='view_location'),
-    url(r'^(\d+)/add_location$', views.add_location, name='add_location'),
+    url(r'^add_location$', views.add_location, name='add_location'),
     url(r'^edit/(?P<id>\d+)$', views.edit, name='edit'),
     url(r'^edit/update/(?P<id>\d+)$', views.update, name='update'),
     url(r'^delete/(?P<id>\d+)$', views.delete, name='delete'),

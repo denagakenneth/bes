@@ -45,8 +45,8 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
     
       </select>
   <!--<input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">-->
-  <label for="bbcategory">Event:</label><br>
-  <input type="text" id="bbcategory" name="bbcategory" maxlength="40" placeholder ="Enter Event" required="required" />
+  <label for="bbmainevent">Event:</label><br>
+  <input type="text" id="bbmainevent" name="bbmainevent" maxlength="40" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
   <input type="date" id="bbdate" name="bbdate" placeholder ="" required="required" />
   <label for="bbbstime">Start Time:</label><br>
@@ -99,11 +99,12 @@ function cclass()
     </tr>
 
        <tr>
+        
         {% for bevent in rinfo.bevent_set.all %}
          <! -- {{ forloop.counter }}:  -->
 
-        <td>{{ bevent.blocation }}</td>
-        <td>{{ bevent.bcategory}}</td>
+        <td>{{ bevent.blocation}}</td>
+        <td>{{ bevent.bmainevent}}</td>
         <td>{{ bevent.bdate}}</td>
         <td>{{ bevent.bstime}}</td>
         <td>{{ bevent.betime}}</td>

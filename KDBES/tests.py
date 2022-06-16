@@ -34,10 +34,10 @@ class ListViewTest(TestCase):
    def test_display_list_item(self):
        correct_rinfo = Rinfo.objects.create()
        Bevent.objects.create(blocation='Area 1', rinfo=correct_rinfo)
-       Bevent.objects.create(bcategory='Wedding', rinfo=correct_rinfo)
+       Bevent.objects.create(bmainevent='Wedding', rinfo=correct_rinfo)
        other_rinfo = Rinfo.objects.create()
        Bevent.objects.create(blocation='Other Location', rinfo=other_rinfo)
-       Bevent.objects.create(bcategory='Other Event', rinfo=other_rinfo)        
+       Bevent.objects.create(bmainevent='Other Event', rinfo=other_rinfo)        
       
        response = self.client.get(f'/{correct_rinfo.id}/')
      
@@ -47,7 +47,7 @@ class ListViewTest(TestCase):
    def test_displays_all(self):        
        rinfo_ = Rinfo.objects.create()        
        Bevent.objects.create(blocation='Area 1', rinfo=rinfo_)        
-       Bevent.objects.create(bcategory='Wedding', rinfo=rinfo_)
+       Bevent.objects.create(bmainevent='Wedding', rinfo=rinfo_)
    
    def test_passes_correct_template(self):       
        other_rinfo = Rinfo.objects.create()        
@@ -68,7 +68,7 @@ class InfoTest(TestCase):
       
       self.client.post(            
           f'/{correct_rinfo.id}/add_info',            
-          data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date','bbbstime': 'New Start Time',
+          data={'bblocation':'New Court Location','bbmainevent': 'New Mainevent','bbdate': 'New Date','bbbstime': 'New Start Time',
           'bbbetime': 'New End Time','bbpeople': 'New People','bbhours': 'New Hours'})            
       
       self.assertEqual(Bevent.objects.count(), 1)        
@@ -81,7 +81,7 @@ class InfoTest(TestCase):
       correct_rinfo = Rinfo.objects.create()        
       response = self.client.post(            
           f'/{correct_rinfo.id}/add_info',            
-         data={'bblocation':'New Court Location','bbcategory': 'New Category','bbdate': 'New Date','bbbstime': 'New Start Time',
+         data={'bblocation':'New Court Location','bbmainevent': 'New Mainevent','bbdate': 'New Date','bbbstime': 'New Start Time',
          'bbbetime': 'New End Time','bbpeople': 'New People','bbhours': 'New Hours'})       
             
       self.assertRedirects(response, f'/{correct_rinfo.id}/')
