@@ -77,7 +77,7 @@ def eventstatus(request, rinfo_id):
 
 def statusupdate(request, rinfo_id):
     rinfo = Bevent.objects.get(id=rinfo_id)
-    rinfo.bstatus= request.POST['bbstatus']
+    rinfo.bstat= request.POST['bbstat']
     rinfo.save()
     return redirect(f'/{rinfo.id}/eventstatus')
 
@@ -101,7 +101,7 @@ def add_location(request, id):
     zlocations.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
     zlocations.save()
     
-   return redirect('/location')
+   return redirect(f'/{rinfo.id}')
 
 
 
