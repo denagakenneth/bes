@@ -2,6 +2,7 @@ from django.urls import re_path as url
 from django.contrib import admin
 from KDBES import views
 from django.conf.urls import include
+from django.conf import settings
 
 
 urlpatterns = [
