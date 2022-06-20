@@ -43,6 +43,7 @@
   <input type="text" id="bbmainevent" name="bbmainevent" maxlength="40" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
   <input type="date" id="bbdate" name="bbdate" placeholder ="" required="required" />
+  
   <label for="bbbstime">Start Time:</label><br>
   <input id="bbbstime" type="time" name="bbbstime"
              min="3:00" max="24:00" required>
@@ -100,8 +101,8 @@ function cclass()
         <td>{{ bevent.blocation}}</td>
         <td>{{ bevent.bmainevent}}</td>
         <td>{{ bevent.bdate}}</td>
-        <td>{{ bevent.bstime}}</td>
-        <td>{{ bevent.betime}}</td>
+        <td>{{ bevent.bbstime}}</td>
+        <td>{{ bevent.bbetime}}</td>
         <td>{{ bevent.bpeople}}</td>
       	<td>{{ bevent.bhours}}</td>
         <td>{{ bevent.brates}}</td>

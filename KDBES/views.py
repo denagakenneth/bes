@@ -101,7 +101,7 @@ def add_location(request, id):
     zlocations.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
     zlocations.save()
     
-   return redirect(f'/{rinfo.id}')
+   return redirect('/location')
 
 
 
