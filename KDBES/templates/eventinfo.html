@@ -54,6 +54,7 @@
 <br><br>
   <label for="bbpeople">Estimated Number of Attendies:</label><br>
   <input type="Number" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="Number of Attendies" required="required" />
+  
   <label for="bbhours">Number of Hours:</label><br>
   <input type="Number" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" required="required" />
  
@@ -69,17 +70,14 @@
 </div>
 </form>
 	<script>
-function cclass()
+function class()
 {
-	var d=document.getElementById("bbpeople");
+	var d=document.getElementById("bbrates");
 	var displaytext=d.options[d.selectedIndex].value;
 	document.getElementById("bbrates").value=displaytext;
 }
-
-
-
-
 </script>
+
 <table id="kenTable" name='tr'>
     <tr>
     <th>Location</th>
