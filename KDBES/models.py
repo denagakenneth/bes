@@ -28,7 +28,7 @@ class Bevent(models.Model):
 class Zlocation(models.Model):
     llocation = models.TextField(default='')
     laddress = models.TextField(default='')
-    bevent = models.ForeignKey(Bevent, default="", on_delete = models.CASCADE)
+    #bevent = models.ForeignKey(Bevent, default="", on_delete = models.CASCADE)
 
 #This model is for Admin view to Approve and disapprove the request of reservation
 class Zremarks(models.Model):

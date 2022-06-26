@@ -25,10 +25,20 @@ urlpatterns = [
     
     url(r'^location$', views.view_location, name='view_location'),
     url(r'^add_location$', views.add_location, name='add_location'),
-    url(r'^edit/(?P<id>\d+)$', views.edit, name='edit'),
-    url(r'^edit/update/(?P<id>\d+)$', views.update, name='update'),
-    url(r'^delete/(?P<id>\d+)$', views.delete, name='delete'),
+    url(r'^adminbook/edit/(?P<id>\d+)$', views.edit, name='edit'),
+    url(r'^adminbook/edit/update/(?P<id>\d+)$', views.update, name='update'),
+    url(r'^adminbook/delete/(?P<id>\d+)$', views.delete, name='delete'),
     
+ 
+    url(r'^modify/(?P<id>\d+)$', views.modify, name='modify'),
+    url(r'^modify/update/(?P<id>\d+)$', views.mupdate, name='mupdate'),
+    
+  
+    url(r'^remove/(?P<id>\d+)$', views.remove, name='remove'),
+    #url(r'^status$', views.s_status, name='s_status'),
+    #url(r'^about$', views.s_about, name='s_about'),
+
+
     url(r'^about$', views.about, name='about'),
     url(r'^contact$', views.contact, name='contact'),
     url(r'^Schedule$', views.Schedule, name='Schedule'),

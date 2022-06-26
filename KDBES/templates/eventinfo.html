@@ -32,13 +32,16 @@
 <div>
 <form method="POST" action="/{{rinfo.id}}/add_item">
 
-  <label for="bblocation">Court Location:</label><br>
- <select id="bblocation" name="bblocation">
-            <option value="0">Available Court here!</option> 
-      <option value="{{ location.bblocation }}">{{ location.bblocation }}</option>
-    
-      </select>
-  <!--<input type="text" id="bblocation" name="bblocation" placeholder ="Enter Court Location">-->
+   
+    <select id="bblocation" name="bblocation">
+        <option value="0">Select Location</option>
+        <option value="4ps Beneficiary">Sta Maria</option>
+        <option value="UCT Beneficiary">Sta Lucia</option>
+        <option value="Indigenous Group">San Nicolas</option>
+        <option value="Solo Parent">San Mateo</option>
+        <option value="Senior Citize">San Lorenzo</option>
+  
+ 
   <label for="bbmainevent">Event:</label><br>
   <input type="text" id="bbmainevent" name="bbmainevent" maxlength="40" placeholder ="Enter Event" required="required" />
   <label for="bbdate">Date</label><br>
@@ -56,11 +59,46 @@
   <input type="Number" id="bbpeople" name="bbpeople" maxlength="4" placeholder ="Number of Attendies" required="required" />
   
   <label for="bbhours">Number of Hours:</label><br>
-  <input type="Number" id="bbhours" name="bbhours" maxlength="2" placeholder="Number of Hours" required="required" />
- 
-  <!--<input type="hidden" id="bbstat" name="bbstat" placeholder="Amount"  ><br><br>-->
-  <label for r="bbrates">Rates:</label><br>
-  <input type="text2" id="bbrates" name="bbrates" placeholder="Amount" readonly ><br><br>
+
+
+
+
+<select name="bbhours" onchange="calculateAmount(this.value)" required>
+      <option value="" disabled selected>Choose your option</option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+      <option value="4">4</option>
+      <option value="5">5</option>
+      <option value="6">6</option>
+      <option value="7">7</option>
+      <option value="8">8</option>
+      <option value="9">9</option>
+      <option value="10">10</option>
+    </select>
+        <label><b>Rates</b></label>
+        <input class="w3-input w3-border" name="bbrates" id="bbrates" type="text" readonly>
+       
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   <input type="submit" id="bbook" name="bbook" style="font-size: 16px;" value="Reserve Now"><br>
   <input type="reset" style="font-size: 16px;" class="button" value="Clear">
@@ -69,13 +107,18 @@
 
 </div>
 </form>
-	<script>
-function class()
-{
-	var d=document.getElementById("bbrates");
-	var displaytext=d.options[d.selectedIndex].value;
-	document.getElementById("bbrates").value=displaytext;
-}
+
+
+
+ <script>
+            function calculateAmount(val) {
+                var tot_price = val * 100;
+                /*display the result*/
+                var divobj = document.getElementById('bbrates');
+                divobj.value = tot_price;
+            }
+  
+
 </script>
 
 <table id="kenTable" name='tr'>
@@ -113,6 +156,19 @@ function class()
 </tr>
 
 </body>
+<style>
+input[type=text4], select {
+  width: 100%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: Copperplate, serif;
+  font-size: 20px;
+}
+</style>
 </html>
 
 

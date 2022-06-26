@@ -12,7 +12,7 @@ def home_log(request):
  if request.method == 'POST':
         if Rinfo.objects.filter(runame=request.POST['rruname'], rpass=request.POST['rrpass']).exists():
             rinfo_ = Rinfo.objects.get(runame=request.POST['rruname'], rpass=request.POST['rrpass'])
-            return redirect(f'{rinfo_.id}/next')
+            return redirect(f'{rinfo_.id}/next/eventview')
 
         else:
             context = {'msg': 'Invalid username or password'}
@@ -45,14 +45,17 @@ def new_list(request):
 
 
 def view_list(request, rinfo_id):
-    #locations = Location.objects.all()
+    
+   # zlocations = Zlocation.objects.all()
+
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
     return render(request, 'eventinfo.html',{'rinfo': rinfo_})
 
 def add_item(request, rinfo_id):
+    
     rinfo_ = Rinfo.objects.get(id=rinfo_id)
     Bevent.objects.create(blocation=request.POST['bblocation'],bmainevent=request.POST['bbmainevent'],bdate=request.POST['bbdate'],bbstime=request.POST['bbbstime'],bbetime=request.POST['bbbetime'],bhours=request.POST['bbhours'],bpeople=request.POST['bbpeople'],brates=request.POST['bbrates'],rinfo=rinfo_)
-    return redirect(f'/{rinfo_.id}/next')
+    return redirect(f'/{rinfo_.id}/next/eventview')
 
 
 def register(request):
@@ -77,10 +80,9 @@ def eventstatus(request, rinfo_id):
 
 def statusupdate(request, rinfo_id):
     rinfo = Bevent.objects.get(id=rinfo_id)
-    rinfo.bstat= request.POST['bbstat']
+    rinfo.bstat= request.POST['bbstatus']
     rinfo.save()
     return redirect(f'/{rinfo.id}/eventstatus')
-
 
 def aaccount(request):
     ainfos = Ainfo.objects.all()
@@ -95,13 +97,11 @@ def zad(request):
 
 
 #This is for adding Location in eventinfo
-def add_location(request, id):
-   if request.method == "POST":
-    zlocation = Zlocation.objects.get(id=id)
-    zlocations.objects.create(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
+def add_location(request):
+    zlocations=Zlocation(llocation=request.POST['lllocation'],laddress=request.POST['lladdress'])
     zlocations.save()
     
-   return redirect('/location')
+    return redirect('/location')
 
 
 
@@ -127,7 +127,7 @@ def update(request, id):
 def delete(request, id):
     rinfo = Rinfo.objects.get(id=id)
     rinfo.delete()
-    return redirect('/')
+    return redirect('/adminbook')
 
 
 
@@ -142,6 +142,24 @@ def contact(request):
 
 def Schedule(request):
     return render(request, 'Schedule.html')
+
+
+def modify(request, id):
+   zlocations = Zlocation.objects.get(id=id)
+   context = {'zlocation': zlocations}
+   return render(request, 'modify.html', context)
+
+def mupdate(request, id):
+   zlocation = Zlocation.objects.get(id=id)
+   zlocation.llocation = request.POST['lllocation']
+   zlocation.laddress = request.POST['lladdress']
+   zlocation.save()
+   return redirect('/location')
+
+def remove(request, id):
+   zlocation = Zlocation.objects.get(id=id)
+   zlocation.delete()
+   return redirect('/location')
 
 # Create your views here.
 #def index(request):

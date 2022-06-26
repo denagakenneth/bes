@@ -34,44 +34,22 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
 <h1>Register Location</h1>
 </center>
 <div>
-<form method="POST" action="/add_location">
+<form method="POST" action="update/{{zlocation.id}}">
 
 <label for="lllocation">Court Location:</label><br>  
-<input type="text" id="lllocation" name="lllocation" minlength="6" placeholder="Enter Location" required="required"><br><br>
 
+ <input type="text" name="lllocation" value="{{ zlocation.llocation }}" required="required"/>
 <label for="lladdress">Address:</label><br>  
-<input type="text" id="lladdress" name="lladdress" minlength="6" placeholder="Enter Address" required="required"><br><br>
+ <input type="text" name="lladdress" value="{{ zlocation.laddress }}" required="required"/>
 
 
-  <input type="submit" id="ladd" name="ladd" style="font-size: 16px;" value="Add Location"><br>
+  <input type="submit" id="ladd" name="ladd" style="font-size: 16px;" value="Update"><br>
 
 {% csrf_token %}
 
 </div>
 </form> 
 
-<table id="kenTable" name='tr'>
-    <tr>
-    <th>Location</th>
-    <th>Address</th>
-    <th>Action</th>	   
-</tr>
-          
-       <tr>
-        {% for zlocation in zlocation %}
-         <! -- {{ forloop.counter }}:  -->
-        
-        <td>{{ zlocation.llocation }}</td>
-        <td>{{ zlocation.laddress}}</td>
-        <td><a href="modify/{{zlocation.id}}">EDIT</a>
-          <br>
-          <a href="remove/{{zlocation.id}}"> DELETE</a></td>
-      
-    
-          </tr>
-        {% endfor %}
-    </table>
-</tr>
 
 </body>
 </html>

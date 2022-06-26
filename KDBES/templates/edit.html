@@ -2,77 +2,73 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Update info of Resident</title>
-    <link rel="stylesheet" href="{% static "/admin/css/updateinfo.css" %}">
-
-</head>
-<br>
-<br>
-
-<br>
-
-<body>
-<div class="container">
-
-  <header>
-    <h2><a href="/info"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
+  <title>Admin Booklist</title>
+  <link rel="stylesheet" href="{% static "/admin/css/adminbooklist.css" %}">
+<header>
+    <h2><a href="/info"><i class="ion-plane"></i></a></h2>
     <nav>
       <ul>
         <li>
-          <a href="/about" title="About">About</a>
+          <a href="/location" title="Add Location">| Add Location</a>
         </li>
+
         <li>
-          <a href="/contact" title="Contact Us">Contact Us</a>
+          <a href="/" title="Logout">| Logout</a>
         </li>
-         
+
       </ul>
     </nav>
   </header>
+<head>
 
-</div>
+
 <br>
+<br>
+<body>
+<!--<body style="background-image:url('https://images.unsplash.com/photo-1490093158370-1a6be674437b?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1014&q=80');
+background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%"> -->
+
 
 <center>
-
-<h4>UPDATE YOUR INFORMATION</h4>
-<form method="POST" action="update/{{ Rinfo.id }}">
-  <label for="rrlname">Last Name:</label><br>
-  <input type="text" id="vvname" name="vvname" value="{{ Rinfo.rlname }}" placeholder ="Enter your name"><br><br>
-  <label for="rrage">Age</label><br>
-  <input type="text" id="rrage" name="rrage" value="{{ Rinfo.rage }}" placeholder ="Enter your Age"><br><br>
-  <label for="vvcnumber">Contact Number:</label><br>
-  <input type="text" id="rrcnumber" name="rrcnumber" value="{{ Rinfo.rcnumber }}" placeholder ="Enter your Contact Number"><br><br>
-  <label for="rraddress">Address:</label><br>
-  <input type="text" id="rraddress" name="rraddress"value="{{ Rinfo.raddress }}" placeholder ="Enter your Email Address"><br><br>
-  <label for="rruname">Username:</label><br>
-  <input type="text" id="rruname" name="rruname" value="{{ Rinfo.runame }}"placeholder ="Enter your Username"><br><br>
-  <label for="rrpass">Password:</label><br>
-  <input type="text" id="rrpass" name="rrpass"value="{{ Rinfo.rpass }}" placeholder ="Enter your Password"><br><br>
-  <button type="submit" style="font-size: 30px;">Update</button>
-  <br>
-  <br>
-  <br>
-
-<label for="vvname">Court Location:</label>
-  <label for="bbdate">{{ Bevent.blocation }}</label><br>	
-
-  <label for="bbdate">Date:</label>
-  <label for="bbdate">{{ Bevent.bdate }}</label><br>
-
-  <label for="bbpeople">Number of Attendies:</label>
-  <label for="bbdate">{{ Bevent.bpeople }}</label><br>	
-  
-  <label for="bbrates">Rates:</label>
-  <label for="bbdate">{{ Bevent.brates }}</label><br>
-  
-
-{% csrf_token %}
-</form> 
+<h4>BARANGAY EVENT SCHEDULE</h4>
 </center>
-<br>
-<br>
-<br>
-<br>
+<div>
+<table id="kenTable" name='tr'>
+    <tr>
+    <th>Last Name</th>
+    <th>First Name</th>
+    <th>Middle Name</th>
+    <th>Address</th>
+    <th>Age</th>
+    <th>Contact Number</th>
+    <th>Action</th>
+
+    </tr>
+
+
+       <tr>
+ 
+<form method="POST" action="update/{{rinfo.id}}">
+
+
+ <td><input type="text" name="lastname" value="{{ rinfo.rfname}}" ></td>
+ <td><input type="text" name="firstname" value="{{ rinfo.rlname}}" ></td>
+ <td><input type="text" name="middlename" value="{{ rinfo.rmname}}" ></td>
+ <td><input type="text" name="rraddress" value="{{ rinfo.raddress}}" ></td>
+ <td><input type="text" name="rrage" value="{{ rinfo.rage}}" ></td>
+ <td><input type="text" name="rccnumber" value="{{ rinfo.rcnumber}}"></td>
+
+
+     <td>  <input type="submit" id="ladd" name="ladd" style="font-size: 16px;" value="Update"><br></td>
+    
+          </tr>
+  
+    </table>
+</form> 
+
+</div>
 </body>
 </html>
+
+
 

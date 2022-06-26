@@ -57,11 +57,19 @@ background-attachment: fixed; background-repeat: no-repeat;background-size: 100%
         <td>{{ rinfo.rage}}</td>
         <td>{{ rinfo.rcnumber}}</td>
 
-        <td><b><a href="/{{rinfo.id}}/eventstatus">View Details</a></b></td>
-
+        <td><b><a href="/{{rinfo.id}}/eventstatus">View Details</a></b><td>
+       
+        <td>  <b><a href="delete/{{rinfo.id}}">Delete</a></b></td>
+      
+    
           </tr>
         {% endfor %}
+
+
+
+
     </table>
+
 
 </div>
 </body>
