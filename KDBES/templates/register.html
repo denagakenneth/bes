@@ -1,16 +1,9 @@
+<!-- prettier-ignore -->
+{% extends 'base_layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>BARANGAY EVENT SCHEDULE</title>
-<link rel="stylesheet" href="{% static "/css/register.css" %}">
+{% block center %} <h1>REGISTER YOUR INFORMATION</h1> {% endblock %}
 
-<body>
-
-<center>
-<h4>REGISTER YOUR INFORMATION</h4>
-</center>
-<div>
+{% block content %}
 <form method="POST" action="/new">
    <label for="lastname">Lastname:</label><br>
   <input type="text" id="lastname" name="lastname" maxlength="30" placeholder ="Enter Your Last Name" required="required" /><br><br>
@@ -33,6 +26,6 @@
  <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
 </form></div>
-</body>
-</html>
+
+{% endblock %}
 

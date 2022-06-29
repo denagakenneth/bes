@@ -1,20 +1,7 @@
+<!-- prettier-ignore -->
+{% extends 'ac_layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Update info of Resident</title>
-    <link rel="stylesheet" href="{% static "/admin/css/updateinfo.css" %}">
-
-</head>
-<br>
-<br>
-
-<br>
-
-<body>
-<div class="container">
-
-  <header>
+{% block header %}
     <h2><a href="/info"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
     <nav>
       <ul>
@@ -27,12 +14,9 @@
          
       </ul>
     </nav>
-  </header>
+{% endblock %}
 
-</div>
-<br>
-
-<center>
+{% block center %}
 
 <h4>UPDATE YOUR INFORMATION</h4>
 <form method="POST" action="update/{{ rinfo.id }}">
@@ -54,11 +38,10 @@
     <input type="submit" id="ladd" name="ladd" style="font-size: 16px;" value="Update"><br>
 {% csrf_token %}
 </form> 
-</center>
-<br>
-<br>
-<br>
-<br>
-</body>
-</html>
 
+<br>
+<br>
+<br>
+<br>
+
+{% endblock %}

@@ -1,30 +1,11 @@
+<!-- prettier-ignore -->
+{% extends 'base_layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Event Information</title>
-<link rel="stylesheet" href="{% static "/css/eventinfo.css" %}">
-<br>
-<br>
-<br>
-<header>
-    <h2><a href="/Schedule"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
-    <nav>
-      <ul>
+{% block center %} <h1>EVENT INFORMATION</h1> {% endblock %}
 
- 	      <li>
-          <a href="/" title="Logout">Logout</a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-<body>
-<center>
 
-<h1>Event Information</h1>
 
-</center>
-
+{% block content %}
 <div>
 <h3>NAME: {{ rinfo.rlname.upper }},{{ rinfo.rfname.upper }} {{ rinfo.rmname.upper }}. &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;</h3>
 </div>
@@ -81,26 +62,6 @@
         <input class="w3-input w3-border" name="bbrates" id="bbrates" type="text" readonly>
        
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   <input type="submit" id="bbook" name="bbook" style="font-size: 16px;" value="Reserve Now"><br>
   <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
@@ -156,20 +117,6 @@
     </table>
 </tr>
 
-</body>
-<style>
-input[type=text4], select {
-  width: 100%;
-  padding: 12px 20px;
-  margin: 8px 0;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
-  font-family: Copperplate, serif;
-  font-size: 20px;
-}
-</style>
-</html>
+{% endblock %}
 
 

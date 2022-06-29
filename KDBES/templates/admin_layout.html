@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>BARANGAY EVENT SCHEDULE</title>
+	<link rel="stylesheet" href="{% static "/admin/css/admin.css" %}">
+</head>
+<header>{% block header %} {% endblock %}</header>
+<center> {% block center %} {% endblock %} </center>
+<body>
+	
+	<div class="wrapper">
+		{% block content %}
+		{% endblock %}
+	</div>
+	
+</body>
+</html>

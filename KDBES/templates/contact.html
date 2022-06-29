@@ -1,16 +1,22 @@
+<!-- prettier-ignore -->
+{% extends 'ac_layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Contact Us</title>
-    <link rel="stylesheet" href="{% static "/css/contact.css" %}">
+ 
 <br>
 <br>
 <br>
-<body>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+
 <div class="container">
 
-  <header>
+  {% block header %}
     <h2><a href="/Schedule"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
     <nav>
       <ul>
@@ -26,8 +32,8 @@
          
       </ul>
     </nav>
-  </header>
-
+ {% endblock %}
+{% block content %} 
 </div>
 <br>
 <br>
@@ -37,7 +43,8 @@
 <br>
 <br>
 <center>
-<div class="content">
+ 
+<div>
   <h1>Contact Us</h1>
             <h5><p></p>We would like to hear from you. If you have any questions or comments, please contact us.
             </p></h5>
@@ -49,7 +56,5 @@
 <br>
 <br>
 <br>
-
-</body>
-</html>
+{% endblock %}
 
