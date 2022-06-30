@@ -1,5 +1,6 @@
 from django.contrib import admin
-from KDBES.models import Rinfo,Bevent,Zlocation,Zremarks,Areg
+from .models import *
+#from KDBES.models import Rinfo,Bevent,Zlocation,Zremarks,Areg
 
 admin.site.register(Rinfo)
 admin.site.register(Bevent)
