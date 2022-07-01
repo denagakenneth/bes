@@ -1,7 +1,18 @@
 <!-- prettier-ignore -->
-{% extends 'ac_layout.html' %}
+{% extends 'z_layout.html' %}
 {% load static %}
-{% block header %} <h2><a href="/Schedule"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
+{% block header %}{% endblock %}
+
+
+{% block content %}
+<br>
+<br>
+<br>
+<body>
+<div class="container">
+
+  <header>
+    <h2><a href="/Schedule"><i class="ion-plane"></i> BARANGAY EVENT SCHEDULE</a></h2>
     <nav>
       <ul>
         <li>
@@ -12,38 +23,18 @@
         </li>
          
       </ul>
-    </nav>{% endblock %}
+    </nav>
+  </header>
 
-{% block content %}
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-
-<div>
-  <h1>About Us</h1>
-            <h2><p></p>Lets bring the joy and happiness to our Community Events.! 
-
-Love our Neighbors in Barangay!</p></h2>
-                     
 </div>
 
-<style>
-body {
-  font-family: 'Lato', sans-serif;
-  margin: 0;
-  background: url('/static/images/about.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #0a0a0b;
-}  
+<center>
 
-</style> 
+<div class="content">
+  <h1>About Us</h1>
+            <h5><p></p>Lets bring the joy and happiness to our Community Events.! 
+
+Love our Neighbors in Barangay!</p></h5>
+                      
+</div>
 {% endblock %}
-

@@ -1,9 +1,28 @@
-<!-- prettier-ignore -->
-{% extends 'base_layout.html' %}
 {% load static %}
-{% block center %} <h1>BARANGAY EVENT SCHEDULE</h1> {% endblock %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>BARANGAY EVENT SCHEDULE</title>
+<link rel="stylesheet" href="{% static "/css/eventview.css" %}">
+<br>
+<br>
+<br>
+<header>
+    <h2><a href="/info"><i class="ion-plane"></i></a></h2>
+    <nav>
+      <ul>
 
-{% block content %}
+ 	<li>
+          <a href="/" title="Logout">Logout</a>
+        </li>
+       
+      </ul>
+    </nav>
+  </header>
+<body>
+<center>
+<h1>BARANGAY EVENT SCHEDULE</h1>
+</center>
 <div>
     <h3>NAME: {{ rinfo.rlname.upper }},  {{ rinfo.rfname.upper }} {{ rinfo.rmname.upper }} &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp; </h3>
 
@@ -47,11 +66,10 @@
 
 
 {% csrf_token %}
-</form>
 </div>
+</form>
 
-{% endblock %}
-
-
+</body>
+</html>
 
 

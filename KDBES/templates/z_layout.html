@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>BARANGAY EVENT SCHEDULE</title>
+	<link rel="stylesheet" href="{% static '/css/ss.css' %}">
+</head>
+<div class="container"><header>{% block header %} <h2><a href="/" title="Home"> Home</a></h2>
+    <nav>
+      <ul>
+        <li>
+    <a href="/about" title="About">| About</a>
+        </li>
+        <li>
+           <a href="/contact" title="Contact Us">Contact Us</a>
+        </li>       
+      </ul>
+    </nav> {% endblock %}</header></div>
+<center> {% block center %}  {% endblock %} </center>
+<body>
+	<div class="wrapper">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
