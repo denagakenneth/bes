@@ -21,26 +21,7 @@
   <br>
   <h3>Our Event's Schedule</h3>
    
-<table id="kenTable" name='tr'>
-    <tr>
-    <th>Location</th>
-    <th>Event</th>
-    <th>Date</th>
-    <th>Time</th>
-    </tr>
 
-       <tr>
-        {% for Zremarks in rinfo.bevent_set.all %}
-         <! -- {{ forloop.counter }}:  -->
-
-        <td>{{ Zremarks.blocation }}</td>
-        <td>{{ Zremarks.bmainevent}}</td>
-        <td>{{ Zremarks.bdate}}</td>
-        <td>{{ Zremarks.bstime}}</td>
-        </tr>
-        {% endfor %}
-    </table>
-</tr>
 
 </div>
     
