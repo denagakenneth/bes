@@ -1,11 +1,10 @@
+<!-- prettier-ignore -->
+{% extends 'y_layout.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html>
-<head>
-    <title>BARANGAY EVENT SCHEDULE</title>
-<link rel="stylesheet" href="{% static "/css/register.css" %}">
+{% block title %} Register {% endblock %}
 
-<body>
+
+{% block content %}
 
 <center>
 <h4>REGISTER YOUR INFORMATION</h4>
@@ -33,6 +32,5 @@
  <input type="reset" style="font-size: 16px;" class="button" value="Clear">
 {% csrf_token %}
 </form></div>
-</body>
-</html>
+{% endblock %}
 

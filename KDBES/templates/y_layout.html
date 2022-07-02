@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="UTF-8">
+	<title>{% block title %} {% endblock %} </title>
+	<link rel="stylesheet" href="/static/css/eventinfo.css"/>
+
+</head>
+<header>{% block header %} 
+    <nav>
+      <ul>
+        <li>
+            <a href="/" title="Logout">Logout</a>
+        </li>      
+      </ul>
+    </nav> {% endblock %}</header>
+    
+<center> {% block center %}  {% endblock %} </center>
+<body style="background-image:url('https://images.unsplash.com/photo-1449247709967-d4461a6a6103?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fG1pbmltYWxpc3QlMjBvZmZpY2V8ZW58MHx8MHx8&w=1000&q=80');
+background-attachment: fixed; background-repeat: no-repeat;background-size: 100% 100%">
+	<div class="wrapper">
+		{% block content %}
+		{% endblock %}
+	</div>
+</body>
+</html>
