@@ -126,9 +126,11 @@ def update(request, id):
     return redirect('/')
 def delete(request, id):
     rinfo = Rinfo.objects.get(id=id)
-    rinfo.delete()
-    return redirect('/adminbook')
 
+    if request.method == "POST":
+        rinfo.delete()
+        return redirect('/adminbook')
+    return render(request, 'delete.html', {'rinfo':rinfo})
 
 
 
